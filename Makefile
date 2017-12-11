@@ -6,7 +6,7 @@
 #    By: amelihov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/21 12:43:36 by amelihov          #+#    #+#              #
-#    Updated: 2017/12/11 13:39:06 by snikitin         ###   ########.fr        #
+#    Updated: 2017/12/11 17:58:37 by snikitin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,14 @@ FRWORKS = -framework Opengl -framework AppKit
 
 INC_DIR = ./includes/
 SRC_DIR = ./srcs/
+OBJ_DIR = ./obj/
+
 LIB_DIR = ./libft/
 MLX_DIR = ./minilibx_macos/
 
 
 _INC = fdf.h
-_SRC = main.c
+_SRC = main.c drw_line.c pxl_new.c
 
 INC = $(_INC:%.h=$(INC_DIR)%.h)
 SRC = $(_SRC:%.c=$(SRC_DIR)%.c)
