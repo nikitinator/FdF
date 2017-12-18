@@ -6,20 +6,32 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2017/12/11 17:58:03 by snikitin         ###   ########.fr       */
+/*   Updated: 2017/12/18 18:14:41 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h> //file control
-#include <unistd.h>
-#include <math.h>
-#include "../minilibx_macos/mlx.h"
-#include "../libft/libft.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <fcntl.h> //file control
+# include <unistd.h>
+# include <math.h>
+# include "../minilibx_macos/mlx.h"
+# include "../libft/libft.h"
+
+# define X 0
+# define Y 1
+# define Z 2
+
+# define IMG_WIDTH 1280
+# define IMG_HEIGHT 1027
+
+# define WHITE 0x00FFFFFF
+
+size_t	g_row;
+size_t	g_col;
 
 typedef struct	s_pxl
 {
@@ -28,14 +40,24 @@ typedef struct	s_pxl
 	int			color;
 }				t_pxl;
 
-typedef struct s_vec
+typedef struct s_ver
 {
 	float	x;
 	float	y;
 	float	z;
-}				t_vec;
+}				t_ver;
 
-void	drw_line(void *mlx_ptr, void *win_ptr, t_pxl *pixel1, t_pxl *pixel2);
+typedef float t_point[3];
+typedef float t_vec[3];
+typedef float t_pixel[2];
+
+char	*ft_strjoin_free(char const *s1, char const *s2);
+size_t	ft_countchr(char *str, char k);
+
+t_pixel	***get_pixel_arr(t_point ***ver);
+t_vec	***get_point_arr(int fd);
+void	drw_line(void *mlx, void *win, t_pixel pixel1, t_pixel pixel2);
+
 t_pxl	*pxl_new(int x, int y, int color);
 
 #endif

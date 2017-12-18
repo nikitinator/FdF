@@ -6,7 +6,7 @@
 #    By: amelihov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/21 12:43:36 by amelihov          #+#    #+#              #
-#    Updated: 2017/12/11 17:58:37 by snikitin         ###   ########.fr        #
+#    Updated: 2017/12/18 18:13:43 by snikitin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ MLX_DIR = ./minilibx_macos/
 
 
 _INC = fdf.h
-_SRC = main.c drw_line.c pxl_new.c
+_SRC = main.c drw_line.c pxl_new.c ft_countchr.c ft_strjoin_free.c\
+	   print_fdf.c get_pixel_arr.c get_point_arr.c
 
 INC = $(_INC:%.h=$(INC_DIR)%.h)
 SRC = $(_SRC:%.c=$(SRC_DIR)%.c)
