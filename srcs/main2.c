@@ -18,17 +18,17 @@
 int		main(int argc, char **argv)
 {
 	(void)argv;
+	(void)argc;
 	t_point Points[10] = {
-	     { 0, 0, 0}, 
-        { 0, 3, 0}, 
-	       { 3,  3, 0}, 
-	       { 2,  3, 0}, 
-	       {0, 3, 0}, 
-	        {3, 0, 0}, 
-        {3,  3, 3}, 
-         {0,  0, 0} , 
-        {3,  0, 0}, 
-    };
+			{ 1, -1, -5},
+			{ 1, -1, -3},
+			{ 1,  1, -5},
+			{ 1,  1, -3},
+			{-1, -1, -5},
+			{-1, -1, -3},
+			{-1,  1, -5},
+			{-1,  1, -3}
+	};
 
 	t_pixel Pixels[10] = {
 	   { 0, -0} ,
@@ -40,7 +40,7 @@ int		main(int argc, char **argv)
        {-0,  0} ,
        {-0,  0} ,
        {-0,  0} ,
-    };§:q
+    };
 
 
 
@@ -55,23 +55,15 @@ int		main(int argc, char **argv)
 
 
 		if ((fd = open(argv[1], O_RDONLY)) <= 0)
-			return (fd);	
-		t_pxl	pixel1;
-		t_pxl	pixel2;
+			return (fd);
 		if (!(mlx = mlx_init()))
 			return (-1);
 		if (!(win = mlx_new_window(mlx, image_width, image_height, "mlx 42")))
-			return (-1);	
-		pixel1.x = 80;
-		pixel1.y = 40;
-		pixel1.color = 0x00FFFFFF;
-		
-		pixel2.x = 13;
-		pixel2.y = 20;
-		pixel2.color = 0x00FFFFFF;
+			return (-1);
 
 
-	for (int i = 0; i < 10; ++i) 
+		mlx_string_put (mlx, win, 50, 50, WHITE, "JOPA" );
+	for (int i = 0; i < 8; ++i)
 	{ 
         // divide the x and y coordinates by the z coordinate to 
         // project the point on the canvas
@@ -83,13 +75,11 @@ int		main(int argc, char **argv)
         float y_proj_pix = y_proj_remap * image_height; 
 		Pixels[i][X] = x_proj_pix;
 		Pixels[i][Y] = y_proj_pix;
-        printf("corner: %d x:%f y:%f\n", i, x_proj_pix, y_proj_pix); 
+        printf("corner: %d x:%f y:%f\n", i, x_proj_pix, y_proj_pix);
+        mlx_pixel_put(mlx, win, x_proj_pix, y_proj_pix, WHITE);
     } 
 
-	for (int i = 0; i < 10; ++i) 
-	{
-		drw_line(mlx, win, Pixels[i], Pixels[i + 1]); 
-	}
+
 
 //		drw_line(mlx, win, &pixel1, &pixel2);
 

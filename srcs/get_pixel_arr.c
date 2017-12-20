@@ -12,30 +12,33 @@
 
 #include "../includes/fdf.h"
 
-t_pixel ***get_pixel_arr(t_point ***ver)
+t_pixel ***get_pixel_arr(t_vec **ver)
 {
-	t_pixel ***grid;
+	t_pixel ***grido;
 	extern size_t	g_row;	
 	extern size_t	g_col;
 	size_t	i;
 	size_t	j;
-	grid = malloc(sizeof(t_pixel **));
-	*grid = malloc((g_row) * sizeof(t_pixel *));
+	grido = malloc(sizeof(t_pixel **));
+    t_pixel **grid;
+	grid = malloc((g_row) * sizeof(t_pixel *));
+	*grido = grid;
 	j = 0;
 	while (j < g_row)
 	{
 		i = 0;
-		*grid[j] = malloc((g_col) * sizeof(t_vec));
+		grid[j] = malloc((g_col) * sizeof(t_pixel));
 		while (i < g_col)
 		{
-			*grid[j][i][X] = *ver[j][i][X] / -*ver[j][i][Z];
-			*grid[j][i][Y] = *ver[j][i][Y] / -*ver[j][i][Z];
-			*grid[j][i][X] = ((*grid[j][i][X] + 1) / 2) * IMG_WIDTH;
-			*grid[j][i][Y] = ((*grid[j][i][Y] + 1) / 2) * IMG_HEIGHT;
-        	printf("i:%zu j:%zu x:%f y:%f\n", i, j, *grid[j][i][X], *grid[j][i][Y]); 
+			grid[j][i][X] = ver[j][i][X] / -ver[j][i][Z];
+			grid[j][i][Y] = ver[j][i][Y] / -ver[j][i][Z];
+			grid[j][i][X] = ((grid[j][i][X] + 1) / 2) * (512);
+			grid[j][i][Y] = ((grid[j][i][Y] + 1) / 2) * (512);
+        	printf("i:%zu j:%zu x:%f y:%f\n", i, j, grid[j][i][X], grid[j][i][Y]);
 			i++;
 		}
 		j++;
 	}
-	return (grid);
+	ft_putendl("kakashka");
+	return (grido);
 }

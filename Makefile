@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    make                                               :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amelihov <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: snikitin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/11/21 12:43:36 by amelihov          #+#    #+#              #
-#    Updated: 2017/12/18 18:13:43 by snikitin         ###   ########.fr        #
+#    Created: 2017/12/20 17:45:38 by snikitin          #+#    #+#              #
+#    Updated: 2017/12/20 17:46:41 by snikitin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ MLX_DIR = ./minilibx_macos/
 
 
 _INC = fdf.h
-_SRC = main.c drw_line.c pxl_new.c ft_countchr.c ft_strjoin_free.c\
-	   print_fdf.c get_pixel_arr.c get_point_arr.c
+_SRC = main.c drw_line.c pxl_new.c\
+	   print_fdf.c get_pixel_arr.c get_point_arr.c 
 
 INC = $(_INC:%.h=$(INC_DIR)%.h)
 SRC = $(_SRC:%.c=$(SRC_DIR)%.c)
