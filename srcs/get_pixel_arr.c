@@ -6,12 +6,12 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 14:53:02 by snikitin          #+#    #+#             */
-/*   Updated: 2017/12/18 18:08:49 by snikitin         ###   ########.fr       */
+/*   Updated: 2017/12/21 17:07:59 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
-
+//
 t_pixel ***get_pixel_arr(t_vec **ver)
 {
 	t_pixel ***grido;

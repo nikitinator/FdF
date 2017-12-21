@@ -6,7 +6,7 @@
 #    By: snikitin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/20 17:45:38 by snikitin          #+#    #+#              #
-#    Updated: 2017/12/21 17:09:24 by snikitin         ###   ########.fr        #
+#    Updated: 2017/12/20 17:46:41 by snikitin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ _SRC = main.c drw_line.c pxl_new.c\
 
 INC = $(_INC:%.h=$(INC_DIR)%.h)
 SRC = $(_SRC:%.c=$(SRC_DIR)%.c)
-OBJ = $(addprefix $(OBJ_DIR), $(_SRC:%.c=%.o))
+OBJ = $(_SRC:%.c=%.o)
 
 .PHONY: all clean fclean re
 
@@ -44,7 +44,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -L $(LIB_DIR) -lft -L $(MLX_DIR) -lmlx\
 		$(FRWORKS)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC) 
+%.o: $(SRC_DIR)%.c $(INC) 
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean: 
