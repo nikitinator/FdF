@@ -15,6 +15,16 @@
 
 //major srak
 
+
+int 	exit_key(int keycode, void *param)
+{
+	(void)(param);
+	printf("exit givno, %d\n", keycode);
+	exit(1);
+	return(0);
+}
+
+
 int		main(int argc, char **argv)
 {
 	if (argc == 2)
@@ -36,7 +46,8 @@ int		main(int argc, char **argv)
 //		mlx_string_put (mlx, win, 50, 50, WHITE, "JOPA" );
 		print_fdf(mlx, win,
 				get_pixel_arr(
-					*get_point_arr(fd)));
+					get_point_arr(fd)));
+        mlx_key_hook(win, exit_key, 0);
 		mlx_loop(mlx);
 	}
 	ft_putendl_fd("usage: fdf source file", 2);

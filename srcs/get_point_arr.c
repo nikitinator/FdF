@@ -6,67 +6,91 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 15:03:25 by snikitin          #+#    #+#             */
-/*   Updated: 2017/12/18 19:24:35 by snikitin         ###   ########.fr       */
+/*   Updated: 2017/12/26 16:24:09 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-static int	create_grid(t_vec ***grido, char *str)
+static t_list	*get_list(int fd)
 {
-	size_t i;
-	size_t j;
-	extern size_t g_row;
-	extern size_t g_col;
-
-	t_vec **grid;
-
-	printf("g_row: %zu\n", g_row);
-	printf("g_col: %zu\n", g_col);
-	grid = malloc((g_row) * sizeof(t_vec*));
-	*grido = grid;
-	j = 0;
-	printf("\n\ncreate grid!\n");
-	while(j < g_row)
-	{
-		i = 0;
-		grid[j] = malloc((g_col) * sizeof(t_vec));
-		while(i < g_col)
-		{
-			grid[j][i][X] = i;
-			grid[j][i][Y] = g_row - j - 1;
-			grid[j][i][Z] = (ft_atoi(str) * -1) - 1.0;
-			printf("x: %f, y: %f, z:%f\n",grid[j][i][X], grid[j][i][Y], grid[j][i][Z]);
-            while (*str && *str != ' ')
-				str++;
-            while (*str == ' ')
-				str++;
-			i++;
-		}
-		j++;
-	}
-	return (0);
-}
-
-t_vec		***get_point_arr(int fd)
-{
+	t_list *begin_list;
 	char	*line;
-	char	*lines;
-	t_vec	***grid;
-	extern size_t g_row;
-	extern size_t g_col;
 
-
-	grid = malloc(sizeof(t_vec ***));
-	if (!(lines = ft_strnew(0)))
-		return (NULL);
+	begin_list = NULL;
 	while(get_next_line(fd, &line) > 0)	
 	{
-		g_row++;
-		lines = ft_strjoin_free(lines, line);
+		if (*line)
+		{
+			char **split;
+			ft_putendl(line);
+			split = ft_strsplit(line,' ');
+
+			int k;
+			for (int i = 0; split[i]; i++) {
+				k = i;
+			}
+			ft_list_push_back(&begin_list, &split, sizeof(char ***));
+		}
+		free(line);
 	}
-	g_col = ((ft_cntwrd(lines) + g_row)/g_row);
-	printf("%s\n",lines);
-	create_grid(grid, lines);
-	return (grid);
+	return (begin_list);
+}
+
+static void		set_arr(t_pntarr *parr, t_list *begin_list)
+{
+	size_t	i;
+	size_t	j;
+	char	**tokens;
+
+	tokens = *(char ***)begin_list->content;
+	j = 0;
+	while (tokens[parr->col])
+		parr->col++;
+
+	parr->arr = malloc(parr->row * sizeof(t_point *));
+	while(begin_list)
+	{
+		tokens = *(char ***)begin_list->content;
+		parr->arr[j] = malloc(parr->col * sizeof(t_point));
+		i = 0;
+		while(tokens[i])
+		{
+
+            printf("%s\t%d\n",tokens[i] ,ft_atoi(tokens[i]));
+
+			parr->arr[j][i][X] = i;
+			parr->arr[j][i][Y] = j;
+			parr->arr[j][i][Z] = (-ft_atoi(tokens[i]) - 5);
+			parr->arr[j][i][PNT_CLR] = (float)WHITE;
+
+
+			ft_strclr(tokens[i]);
+			free(tokens[i]);
+			i++;
+		}
+		free(tokens);
+		free(begin_list);
+		begin_list = begin_list->next;
+		j++;
+	}
+
+}
+
+t_pntarr		*get_point_arr(int fd)
+{
+	t_list *begin_list;
+	t_pntarr *parr;
+	t_list *temp;
+
+	begin_list = get_list(fd);
+	temp = begin_list;
+
+	parr = malloc(sizeof(t_pntarr));
+	parr->row = ft_list_count(begin_list);
+	parr->col = 0;
+	set_arr(parr, begin_list);
+	printf("row: %zu \t col %zu\n", parr->row, parr->col);
+	return (parr);
+
 }
