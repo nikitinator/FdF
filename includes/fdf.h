@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2017/12/26 14:01:17 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/06 17:11:50 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,25 @@
 # define PXL_CLR 2
 
 # define IMG_WIDTH 1280
-# define IMG_HEIGHT 1027
+# define IMG_HEIGHT 1024
 
+# define BUT_8 91
+# define BUT_4 86
+# define BUT_6 88
+# define BUT_2 84
+# define BUT_min 78
+# define BUT_plu 69
 
 # define WHITE 0x00FFFFFF
 
 size_t	g_row;
 size_t	g_col;
 
-typedef float t_point[4];
+typedef double t_point[4];
 typedef float	t_vec[3];
-typedef float t_pixel[3];
+typedef double t_pixel[3];
+
+typedef float	MATRIX3[9];
 
 typedef struct	s_pxl
 {
@@ -59,6 +67,7 @@ typedef struct	s_pntarr
 {
 	size_t	col;
 	size_t	row;
+	t_point center;
 	t_point	**arr;
 }				t_pntarr;
 
@@ -69,8 +78,28 @@ typedef struct	s_pixarr
 	t_pixel	**arr;
 }				t_pixarr;
 
+typedef struct	s_fdf
+{
+	void		*mlx;
+	void		*win;
+	t_pntarr	*pnts;
+	t_pixarr	*pxls;
+	float		mov_coeff;
+	float		scl_coeff;
+	float		rot_coeff;	
+	MATRIX3		rot_X;
+	MATRIX3		rot_Y;
+	MATRIX3		rot_Z;
+	void		(*f[100])(void *param);
+}				t_fdf;
+
 void		print_fdf(void *mlx, void *win, t_pixarr *pxarr);
 
+void		normalize_pnts(t_pntarr *pnts);
+
+void	mov_X(void *param, double n);
+void	mov_Y(void *param, double n);
+void	mov_Z(void *param, double n);
 t_pntarr	*get_point_arr(int fd);
 t_pixarr	*get_pixel_arr(t_pntarr *arr);
 void		drw_line(void *mlx, void *win, t_pixel pixel1, t_pixel pixel2);

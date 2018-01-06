@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_fdf.c                                        :+:      :+:    :+:   */
+/*   mov_Y.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/18 17:28:55 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/05 18:23:32 by snikitin         ###   ########.fr       */
+/*   Created: 2017/12/27 15:22:25 by snikitin          #+#    #+#             */
+/*   Updated: 2018/01/06 17:13:18 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-void	print_fdf(void *mlx, void *win, t_pixarr *pxarr)
+void	mov_Y(void *param, double n)
 {
-	size_t	i;
+	t_fdf 	*fdf;
 	size_t	j;
+	size_t	i;
 
-	mlx_clear_window(mlx, win);	
+	fdf = (t_fdf *)param;
+	fdf->pnts->center[Y] += n;
 	j = 0;
-	while (j < pxarr->row)
+	ft_putendl("increase_Y_test");
+	while (j < fdf->pnts->row)
 	{
 		i = 0;
-		while (i < pxarr->col - 1)
+		while (i < fdf->pnts->col)
 		{
-			drw_line(mlx, win, pxarr->arr[j][i], pxarr->arr[j][i + 1]);
-			i++;
-		}
-		j++;
-	}
-   j = 0;
-	while (j < pxarr->row - 1)
-	{
-		i = 0;
-		while (i < pxarr->col)
-		{
-			drw_line(mlx, win, pxarr->arr[j][i], pxarr->arr[j + 1][i]);
+			fdf->pnts->arr[j][i][Y] += n;
 			i++;
 		}
 		j++;
