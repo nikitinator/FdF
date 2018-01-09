@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 14:53:02 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/06 17:36:37 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/09 15:34:48 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,17 @@ t_pixarr	*get_pixel_arr(t_pntarr *parr)
 
 
 	j = 0;
-        while (j < pxarr->row)
-        {
-            i = 0;
-            pxarr->arr[j] = malloc((pxarr->col) * sizeof(t_pixel));
+while (j < pxarr->row)
+{
+	i = 0;
+	pxarr->arr[j] = malloc((pxarr->col) * sizeof(t_pixel));
 		while (i < pxarr->col)
 		{
 			pxarr->arr[j][i][X] = parr->arr[j][i][X] / -(parr->arr[j][i][Z]);// + IMG_WIDTH/2);
 			pxarr->arr[j][i][Y] = parr->arr[j][i][Y] / -(parr->arr[j][i][Z]);// + IMG_HEIGHT/2);
-			pxarr->arr[j][i][X] = ((pxarr->arr[j][i][X])) * 512
-			;
+			pxarr->arr[j][i][X] = ((pxarr->arr[j][i][X])) * 512;
 			pxarr->arr[j][i][Y] = ((pxarr->arr[j][i][Y])) * 512; 
-			;	
+			//;	
 
 		printf("x: %f, y: %f, z:%f\n",
 				parr->arr[j][i][X], parr->arr[j][i][Y], parr->arr[j][i][Z]);

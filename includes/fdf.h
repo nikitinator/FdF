@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/06 17:11:50 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/09 16:41:54 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,13 @@
 # define BUT_4 86
 # define BUT_6 88
 # define BUT_2 84
-# define BUT_min 78
-# define BUT_plu 69
+# define BUT_MIN 78
+# define BUT_PLU 69
+# define BUT_J 38	
+# define BUT_K 40	
+# define BUT_H 4	
+# define BUT_L 37	
+
 
 # define WHITE 0x00FFFFFF
 
@@ -47,7 +52,7 @@ typedef double t_point[4];
 typedef float	t_vec[3];
 typedef double t_pixel[3];
 
-typedef float	MATRIX3[9];
+typedef float	t_matr3[9];
 
 typedef struct	s_pxl
 {
@@ -87,19 +92,35 @@ typedef struct	s_fdf
 	float		mov_coeff;
 	float		scl_coeff;
 	float		rot_coeff;	
-	MATRIX3		rot_X;
-	MATRIX3		rot_Y;
-	MATRIX3		rot_Z;
+	t_matr3		rot_X;
+	t_matr3		rot_Y;
+	t_matr3		rot_Z;
+	t_matr3		scl;
 	void		(*f[100])(void *param);
 }				t_fdf;
+
+
+int		init_rot_mat(t_fdf *fdf);
+void	set_rot_mat_X(t_fdf *fdf);
+void	set_rot_mat_Y(t_fdf *fdf);
+void	set_rot_mat_Z(t_fdf *fdf);
+
+void	mult_matr(t_matr3 matrix, t_pntarr *pnts);
 
 void		print_fdf(void *mlx, void *win, t_pixarr *pxarr);
 
 void		normalize_pnts(t_pntarr *pnts);
 
+void		transform_pnts(void *param, double x, double y, double z);
+void		scale_pnts(void *param, double x, double y, double z);
 void	mov_X(void *param, double n);
 void	mov_Y(void *param, double n);
 void	mov_Z(void *param, double n);
+
+void	rotate_X(void *param);
+void	rotate_Y(void *param);
+void	rotate_Z(void *param);
+
 t_pntarr	*get_point_arr(int fd);
 t_pixarr	*get_pixel_arr(t_pntarr *arr);
 void		drw_line(void *mlx, void *win, t_pixel pixel1, t_pixel pixel2);
