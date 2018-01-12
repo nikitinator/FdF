@@ -6,7 +6,7 @@
 #    By: snikitin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/20 17:45:38 by snikitin          #+#    #+#              #
-#    Updated: 2018/01/09 16:42:47 by snikitin         ###   ########.fr        #
+#    Updated: 2018/01/11 16:02:56 by snikitin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ _INC = fdf.h
 _SRC = main.c drw_line.c pxl_new.c\
 	   print_fdf.c get_pixel_arr.c get_point_arr.c\
 	   init_rot_mat.c\
-	   transform.c rotate.c scale.c
+	   transform.c rotate.c scale.c\
+	   drw_line_bras.c
 
 INC = $(_INC:%.h=$(INC_DIR)%.h)
 SRC = $(_SRC:%.c=$(SRC_DIR)%.c)

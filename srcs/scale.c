@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 16:21:29 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/09 16:41:02 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/09 17:12:19 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,17 @@ void	scale_pnts(void	*param, double x, double y, double z)
 	t_fdf 	*fdf;
 	size_t	j;
 	size_t	i;
+	t_point temp;
 
 	fdf = (t_fdf *)param;
-	j = 0;
 	ft_putendl("scale_pnts");
-	fdf->pnts->center[X] *= x;
-	fdf->pnts->center[Y] *= y;
-	fdf->pnts->center[Z] *= z;
+
+	temp[X]= fdf->pnts->center[X];
+	temp[Y] = fdf->pnts->center[Y];
+	temp[Z] = fdf->pnts->center[Z];
+	transform_pnts(param, -fdf->pnts->center[X], -fdf->pnts->center[Y],
+		   	-fdf->pnts->center[Z]);
+	j = 0;
 	while (j < fdf->pnts->row)
 	{
 		i = 0;
@@ -36,4 +40,5 @@ void	scale_pnts(void	*param, double x, double y, double z)
 		}
 		j++;
 	}
+	transform_pnts(param, temp[X], temp[Y], temp[Z]);
 }

@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 15:03:25 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/09 15:34:15 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/11 18:56:29 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,10 @@ static void		set_arr(t_pntarr *parr, t_list *begin_list)
 
             printf("%s\t%d\n",tokens[i] ,ft_atoi(tokens[i]));
 
-			parr->arr[j][i][X] = i;
-			parr->arr[j][i][Y] = j;
-			parr->arr[j][i][Z] = -(ft_atoi(tokens[i])/3) - 1;
+			parr->arr[j][i][X] = i * 10;
+			parr->arr[j][i][Y] = j * 10;
+			parr->arr[j][i][Z] = -(ft_atoi(tokens[i]));
 			parr->arr[j][i][PNT_CLR] = (float)WHITE;
-
-
 			ft_strclr(tokens[i]);
 			free(tokens[i]);
 			i++;
@@ -91,9 +89,9 @@ t_pntarr		*get_point_arr(int fd)
 	parr->row = ft_list_count(begin_list);
 	parr->col = 0;
 	set_arr(parr, begin_list);
-	parr->center[X] = (parr->col-1) / 2.0;
-	parr->center[Y] = (parr->row-1) / 2.0;
-	parr->center[Z] = -1;//
+	parr->center[X] = (parr->col-1) * 10/ 2.0;
+	parr->center[Y] = (parr->row-1) * 10/ 2.0;
+	parr->center[Z] = 0;//
 
 	printf("row: %zu \t col %zu\n", parr->row, parr->col);
 	return (parr);

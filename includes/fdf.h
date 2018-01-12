@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/09 16:41:54 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/12 16:33:09 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 
 # define PXL_CLR 2
 
-# define IMG_WIDTH 1280
-# define IMG_HEIGHT 1024
+# define IMG_WIDTH 1600 
+# define IMG_HEIGHT 1200 
 
 # define BUT_8 91
 # define BUT_4 86
@@ -41,16 +41,25 @@
 # define BUT_K 40	
 # define BUT_H 4	
 # define BUT_L 37	
+# define BUT_MUL 75
+# define BUT_DIV 67
+# define BUT_SPACE 49
 
+# define ORTOGONAL 0
+# define PERSPECTIVE 1
 
 # define WHITE 0x00FFFFFF
+# define GREEN 0x0000FF00
+# define RED 0x00FF0000
+
+# define SET_PIX(x, y, i, c) *(int *)(i->arr+(x*i->by_pp+i->size_line*y)) = c;
 
 size_t	g_row;
 size_t	g_col;
 
 typedef double t_point[4];
 typedef float	t_vec[3];
-typedef double t_pixel[3];
+typedef int t_pixel[3];
 
 typedef float	t_matr3[9];
 
@@ -80,13 +89,28 @@ typedef struct	s_pixarr
 {
 	size_t	col;
 	size_t	row;
+	t_pixel center; //
 	t_pixel	**arr;
 }				t_pixarr;
 
+typedef struct	s_img
+{
+	void	*pnt_img;
+	int		bi_pp; //bits per pixel
+	int		by_pp;
+	int		size_line;
+	int		endian;	
+	char	*arr;
+}				t_img;
+
 typedef struct	s_fdf
 {
+	int			fd;
+	int			pr_type;
 	void		*mlx;
 	void		*win;
+
+	t_img		*img;                                                                                                                                              		
 	t_pntarr	*pnts;
 	t_pixarr	*pxls;
 	float		mov_coeff;
@@ -107,7 +131,8 @@ void	set_rot_mat_Z(t_fdf *fdf);
 
 void	mult_matr(t_matr3 matrix, t_pntarr *pnts);
 
-void		print_fdf(void *mlx, void *win, t_pixarr *pxarr);
+//void		print_fdf(void *mlx, void *win, t_pixarr *pxarr);
+void		print_fdf(void *mlx, void *win, t_img *img, t_pixarr *pxarr);
 
 void		normalize_pnts(t_pntarr *pnts);
 
@@ -122,8 +147,10 @@ void	rotate_Y(void *param);
 void	rotate_Z(void *param);
 
 t_pntarr	*get_point_arr(int fd);
-t_pixarr	*get_pixel_arr(t_pntarr *arr);
+t_pixarr	*get_pixel_arr(t_fdf *fdf);
 void		drw_line(void *mlx, void *win, t_pixel pixel1, t_pixel pixel2);
+//void		drw_line_bras(void *mlx, void *win, t_pixel pixel1, t_pixel pixel2);
+void		drw_line_bras(t_img *img, t_pixel pixel1, t_pixel pixel2);
 
 t_pxl		*pxl_new(int x, int y, int color);
 

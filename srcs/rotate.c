@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 15:37:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/09 15:44:08 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/11 19:05:40 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,10 @@ void	rotate_X(void *param)
 	temp[Y] = fdf->pnts->center[Y];
 	temp[Z] = fdf->pnts->center[Z];
 
-//	mov_X(param, -fdf->pnts->center[X]);
-//	mov_Y(param, -fdf->pnts->center[Y]);
-//	mov_Z(param, -fdf->pnts->center[Z]);
 	transform_pnts(param, -fdf->pnts->center[X], -fdf->pnts->center[Y],
 		   	-fdf->pnts->center[Z]);
 	mult_matr(fdf->rot_X, fdf->pnts);
 	transform_pnts(param, temp[X], temp[Y], temp[Z]);
-//	mov_X(param, temp[X]);
-//	mov_Y(param, temp[Y]);
-//	mov_Z(param, temp[Z]);
-	
 	ft_putendl("rotate_X_test");
 }
 
@@ -46,16 +39,10 @@ void	rotate_Y(void *param)
 	temp[Y] = fdf->pnts->center[Y];
 	temp[Z] = fdf->pnts->center[Z];
 
-//	mov_X(param, -fdf->pnts->center[X]);
-//	mov_Y(param, -fdf->pnts->center[Y]);
-//	mov_Z(param, -fdf->pnts->center[Z]);
 	transform_pnts(param, -fdf->pnts->center[X], -fdf->pnts->center[Y],
 		   	-fdf->pnts->center[Z]);
 	mult_matr(fdf->rot_Y, fdf->pnts);
 	transform_pnts(param, temp[X], temp[Y], temp[Z]);
-//	mov_X(param, temp[X]);
-//	mov_Y(param, temp[Y]);
-//	mov_Z(param, temp[Z]);
 	
 	ft_putendl("rotate_Y_test");
 }
@@ -71,16 +58,9 @@ void	rotate_Z(void *param)
 	temp[Y] = fdf->pnts->center[Y];
 	temp[Z] = fdf->pnts->center[Z];
 
-//	mov_X(param, -fdf->pnts->center[X]);
-//	mov_Y(param, -fdf->pnts->center[Y]);
-//	mov_Z(param, -fdf->pnts->center[Z]);
 	transform_pnts(param, -fdf->pnts->center[X], -fdf->pnts->center[Y],
 		   	-fdf->pnts->center[Z]);
 	mult_matr(fdf->rot_Z, fdf->pnts);
 	transform_pnts(param, temp[X], temp[Y], temp[Z]);
-//	mov_X(param, temp[X]);
-//	mov_Y(param, temp[Y]);
-//	mov_Z(param, temp[Z]);
-	
 	ft_putendl("rotate_Z_test");
 }

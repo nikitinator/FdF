@@ -1,0 +1,1 @@
+clang  -Wall -Wextra -Werror -c srcs/main.c -o obj/main.o
