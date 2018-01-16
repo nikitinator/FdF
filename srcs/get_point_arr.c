@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 15:03:25 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/11 18:56:29 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/16 17:04:03 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static void		set_arr(t_pntarr *parr, t_list *begin_list)
 	size_t	i;
 	size_t	j;
 	char	**tokens;
+	char 	*color;
 
 	tokens = *(char ***)begin_list->content;
 	j = 0;
@@ -62,8 +63,11 @@ static void		set_arr(t_pntarr *parr, t_list *begin_list)
 
 			parr->arr[j][i][X] = i * 10;
 			parr->arr[j][i][Y] = j * 10;
-			parr->arr[j][i][Z] = -(ft_atoi(tokens[i]));
-			parr->arr[j][i][PNT_CLR] = (float)WHITE;
+			parr->arr[j][i][Z] = (ft_atoi(tokens[i]));
+			if ((color = ft_strchr(tokens[i], ',')))	
+				parr->arr[j][i][PNT_CLR] = (float)ft_atoi_base(color + 3, 16);
+			else
+				parr->arr[j][i][PNT_CLR] = (float)WHITE;
 			ft_strclr(tokens[i]);
 			free(tokens[i]);
 			i++;
@@ -84,7 +88,6 @@ t_pntarr		*get_point_arr(int fd)
 
 	begin_list = get_list(fd);
 	temp = begin_list;
-
 	parr = malloc(sizeof(t_pntarr));
 	parr->row = ft_list_count(begin_list);
 	parr->col = 0;

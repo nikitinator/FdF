@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 14:53:02 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/11 19:09:15 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/16 17:05:45 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_pixarr	*get_pixel_arr(t_fdf *fdf)
 			{
 				pxarr->arr[j][i][X] = parr->arr[j][i][X];
 				pxarr->arr[j][i][Y] = parr->arr[j][i][Y];
+				pxarr->arr[j][i][PXL_CLR] = parr->arr[j][i][PNT_CLR];
 			}
 			printf("x: %f, y: %f, z:%f\n",
 					parr->arr[j][i][X], parr->arr[j][i][Y], parr->arr[j][i][Z]);
