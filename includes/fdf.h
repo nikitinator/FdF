@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/16 21:10:53 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/19 15:26:17 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@
 # define PNT_CLR 3
 
 # define PXL_CLR 2
+
+#define R 2
+#define G 1
+#define B 0
+
 
 # define IMG_WIDTH 1600 
 # define IMG_HEIGHT 1200 
@@ -72,28 +77,25 @@ typedef int t_pixel[3];
 
 typedef float	t_matr3[9];
 
-#define B_RED 2
-#define B_GRN 1
-#define B_BLU 0
-
 typedef union	u_color
 {
-	int		col_i;
-	char	col_b[3];
-}				t_color
+	unsigned int	c_32;
+	unsigned char	c_8[3];
+}				t_color;
 
 typedef struct	s_drw_ln
 {
-	int		dx;
-	int		dy;
-	int 	num_pix;
-	int		s1;
-	int		s2;
+	int		delta_X;
+	int		delta_Y;
+	int		sign_X;
+	int		sign_Y;
 	int		error;
-	int		flag;
+	int		error2;
+	float	pix_num;
+	float	m[3];
 	t_color	c1;
 	t_color c2;
-}				t_drw_ln
+}				t_drw_ln;
 
 typedef struct	s_pxl
 {
@@ -149,8 +151,8 @@ typedef struct			s_fdf
 	void				*win;
 	t_img				*img;
 	t_func_key_hook		func[20];
-	t_pntarr			*pnts;
-	t_pixarr			*pxls;
+	t_pntarr			pnts;
+	t_pixarr			pxls;
 	float				mov_coeff;
 	float				scl_coeff;
 	float				rot_coeff;	

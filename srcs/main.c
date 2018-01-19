@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:32:09 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/16 21:10:55 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/19 15:26:09 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ void	init_fdf(t_fdf *fdf)
 	fdf->img = malloc(sizeof(t_img));
 	init_fdf_img(fdf->img, fdf->mlx);
 	fdf->pr_type = 0;
-	fdf->pnts = get_point_arr(fdf->fd);
-	fdf->pxls = get_pixel_arr(fdf);
+	get_point_arr(fdf->fd, &(fdf->pnts));
+	fdf->pxls = *get_pixel_arr(fdf);
 	printf("POINT   col: %zu\trow: %zu\n", fdf->pnts->col,fdf->pnts->row);
 	fdf->mov_coeff = 3;
 	fdf->rot_coeff = M_PI/180 * 4;
@@ -92,9 +92,7 @@ int		main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		t_fdf	*fdf;
-		if (!(fdf = malloc(sizeof(t_fdf))))
-			return (-1);
+		t_fdf	fdf;
 		if ((fdf->fd = open(argv[1], O_RDONLY)) <= 0)
 			return (-1);
 		if (!(fdf->mlx = mlx_init()))
@@ -103,13 +101,13 @@ int		main(int argc, char **argv)
 						IMG_WIDTH, IMG_HEIGHT, "mlx 42")))
 			return (-1);
 		
-		init_fdf(fdf);
-		transform_pnts(fdf, -fdf->pnts->center[X], -fdf->pnts->center[Y], 0);
-		transform_pnts(fdf, IMG_WIDTH/2.0, IMG_HEIGHT/2.0, 0);
+		init_fdf(&fdf);
+		transform_pnts(&fdf, -fdf.pnts.center[X], -fdf.pnts.center[Y], 0);
+		transform_pnts(*fdf, IMG_WIDTH/2.0, IMG_HEIGHT/2.0, 0);
 
-		print_fdf(fdf->mlx, fdf->win, fdf->img, fdf->pxls);
-        mlx_hook(fdf->win, 2, 5, exit_key, fdf);
-		mlx_loop(fdf->mlx);
+		print_fdf(fdf.mlx, fdf.win, fdf.img, &fdf.pxls);
+        mlx_hook(fdf.win, 2, 5, exit_key, &fdf);
+		mlx_loop(fdf.mlx);
 	}
 	ft_putendl_fd("usage: fdf source file", 2);
 	return(0);
