@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/19 15:26:17 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/19 15:59:34 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,8 +187,9 @@ void		rotate_X(void *param, double rot_coeff);
 void		rotate_Y(void *param, double rot_coeff);
 void		rotate_Z(void *param, double rot_coeff);
 
-t_pntarr	*get_point_arr(int fd);
-t_pixarr	*get_pixel_arr(t_fdf *fdf);
+void		get_point_arr(int fd, t_pntarr *parr);
+void		init_pixel_arr(t_fdf *fdf);
+void		get_pixel_arr(t_pntarr *parr, t_pixarr *pixarr);
 void		drw_line(void *mlx, void *win, t_pixel pixel1, t_pixel pixel2);
 //void		drw_line_bras(void *mlx, void *win, t_pixel pixel1, t_pixel pixel2);
 void		drw_line_bras(t_img *img, t_pixel pixel1, t_pixel pixel2);
