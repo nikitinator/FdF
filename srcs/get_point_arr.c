@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 15:03:25 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/19 16:11:29 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/21 18:44:34 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,6 @@ static t_list	*get_list(int fd)
 			char **split;
 			ft_putendl(line);
 			split = ft_strsplit(line,' ');
-
-			int k;
-			for (int i = 0; split[i]; i++)
-			{
-				k = i;
-			}
 			ft_list_push_back(&begin_list, &split, sizeof(char ***));
 		}
 		free(line);
@@ -44,12 +38,11 @@ static void		set_arr(t_pntarr *parr, t_list *begin_list)
 	size_t	j;
 	char	**tokens;
 	char 	*color;
-
+	
 	tokens = *(char ***)begin_list->content;
 	j = 0;
 	while (tokens[parr->col])
 		parr->col++;
-
 	parr->arr = malloc(parr->row * sizeof(t_point *));
 	while(begin_list)
 	{
@@ -58,13 +51,13 @@ static void		set_arr(t_pntarr *parr, t_list *begin_list)
 		i = 0;
 		while(tokens[i])
 		{
-
             printf("%s\t%d\n",tokens[i] ,ft_atoi(tokens[i]));
 
-			parr->arr[j][i][X] = i * 10;
-			parr->arr[j][i][Y] = j * 10;
-			parr->arr[j][i][Z] = (ft_atoi(tokens[i]));
-			if ((color = ft_strchr(tokens[i], ',')))	
+			parr->arr[j][i][X] = i * 10 ;
+			parr->arr[j][i][Y] = j * 10 ;
+			parr->arr[j][i][ISTOP] = 
+				((parr->arr[j][i][Z] = (-ft_atoi(tokens[i])))) ? 1 : 0;
+			if ((color = ft_strchr(tokens[i], ',')))
 				parr->arr[j][i][PNT_CLR] = (float)ft_atoi_base(color + 3, 16);
 			else
 				parr->arr[j][i][PNT_CLR] = (float)WHITE;
@@ -83,15 +76,15 @@ void	get_point_arr(int fd, t_pntarr *parr)
 {
 	t_list *begin_list;
 	t_list *temp;
-
+	parr->z_list = 0;
 	begin_list = get_list(fd);
 	temp = begin_list;
 	parr->row = ft_list_count(begin_list);
 	parr->col = 0;
 	set_arr(parr, begin_list);
-	parr->center[X] = (parr->col-1) * 10/ 2.0;
-	parr->center[Y] = (parr->row-1) * 10/ 2.0;
-	parr->center[Z] = 0;//
+	parr->center[X] = (parr->col-1) * 10/2.0;
+	parr->center[Y] = (parr->row-1) * 10/2.0;
+	parr->center[Z] = 0;
 
 	printf("row: %zu \t col %zu\n", parr->row, parr->col);
 	return ;

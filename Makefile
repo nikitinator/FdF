@@ -6,7 +6,7 @@
 #    By: snikitin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/20 17:45:38 by snikitin          #+#    #+#              #
-#    Updated: 2018/01/17 18:01:29 by snikitin         ###   ########.fr        #
+#    Updated: 2018/01/19 18:30:13 by snikitin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ MLX_DIR = ./minilibx_macos/
 
 
 _INC = fdf.h
-_SRC = main.c drw_line.c pxl_new.c\
+_SRC = main.c \
 	   print_fdf.c get_pixel_arr.c get_point_arr.c\
 	   init_rot_mat.c\
 	   transform.c rotate.c scale.c\

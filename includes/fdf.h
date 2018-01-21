@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/19 15:59:34 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/21 18:54:37 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define Y 1
 # define Z 2
 # define PNT_CLR 3
+# define ISTOP 4
 
 # define PXL_CLR 2
 
@@ -56,6 +57,9 @@
 # define BUT_UPLF 115
 # define BUT_DWRI 119
 # define BUT_C 8
+# define BUT_BIGG 47
+# define BUT_LESS 43 
+
 
 # define ORTOGONAL 0
 # define PERSPECTIVE 1
@@ -71,7 +75,7 @@
 size_t	g_row;
 size_t	g_col;
 
-typedef double t_point[4];
+typedef double t_point[5];
 typedef float	t_vec[3];
 typedef int t_pixel[3];
 
@@ -90,26 +94,14 @@ typedef struct	s_drw_ln
 	int		sign_X;
 	int		sign_Y;
 	int		error;
-	int		error2;
+	int		error_2;
 	float	pix_num;
+	int		t[3];
+	float	c[3];
 	float	m[3];
 	t_color	c1;
 	t_color c2;
 }				t_drw_ln;
-
-typedef struct	s_pxl
-{
-	int			x;
-	int			y;
-	int			color;
-}				t_pxl;
-
-typedef struct s_ver
-{
-	float	x;
-	float	y;
-	float	z;
-}				t_ver;
 
 typedef struct	s_pntarr
 {
@@ -117,12 +109,14 @@ typedef struct	s_pntarr
 	size_t	row;
 	t_point center;
 	t_point	**arr;
+	t_list	*z_list;
 }				t_pntarr;
 
 typedef struct	s_pixarr
 {
 	size_t	col;
 	size_t	row;
+	int		pr_type;
 	t_pixel center; //
 	t_pixel	**arr;
 }				t_pixarr;
@@ -171,7 +165,6 @@ void	set_rot_mat_Z(t_fdf *fdf, double rot_coeff);
 
 void	mult_matr(t_matr3 matrix, t_pntarr *pnts);
 
-//void		print_fdf(void *mlx, void *win, t_pixarr *pxarr);
 void		print_fdf(void *mlx, void *win, t_img *img, t_pixarr *pxarr);
 
 void		normalize_pnts(t_pntarr *pnts);
@@ -190,10 +183,7 @@ void		rotate_Z(void *param, double rot_coeff);
 void		get_point_arr(int fd, t_pntarr *parr);
 void		init_pixel_arr(t_fdf *fdf);
 void		get_pixel_arr(t_pntarr *parr, t_pixarr *pixarr);
-void		drw_line(void *mlx, void *win, t_pixel pixel1, t_pixel pixel2);
-//void		drw_line_bras(void *mlx, void *win, t_pixel pixel1, t_pixel pixel2);
 void		drw_line_bras(t_img *img, t_pixel pixel1, t_pixel pixel2);
 
-t_pxl		*pxl_new(int x, int y, int color);
 
 #endif

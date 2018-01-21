@@ -6,19 +6,50 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:32:09 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/19 16:22:19 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/21 18:54:39 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include <stdio.h>
 
+
+void	add_top_Z(t_fdf *fdf, double n)
+{
+	size_t	j;
+	size_t	i;
+
+	j = 0;
+	ft_putendl("add_top_Z");
+	while (j < fdf->pnts.row)
+	{
+		i = 0;
+		while (i < fdf->pnts.col)
+		{
+			if (fdf->pnts.arr[j][i][ISTOP])
+				fdf->pnts.arr[j][i][Z] += n;
+			i++;
+		}
+		j++;
+	}
+}
+
 void	change_projection(void *param)
 {
 	t_fdf *fdf;
 
 	fdf = (t_fdf *)param;
-	fdf->pr_type++;
+	if (fdf->pxls.pr_type == ORTOGONAL)
+	{
+		transform_pnts(fdf, -(IMG_WIDTH/2.0), -(IMG_HEIGHT/2.0), 0);
+		fdf->pxls.pr_type=PERSPECTIVE;
+	}
+	else
+	{
+		transform_pnts(fdf, IMG_WIDTH/2.0, IMG_HEIGHT/2.0, 0);
+		fdf->pxls.pr_type = ORTOGONAL;
+	}
+	return ;
 }
 
 int 	exit_key(int keycode, void *param)
@@ -57,6 +88,15 @@ int 	exit_key(int keycode, void *param)
 		rotate_Z(param, -fdf->rot_coeff);
 	else if (keycode == BUT_DWRI)
 		rotate_Z(param, fdf->rot_coeff);
+	else if (keycode == BUT_SPACE)
+		change_projection(param);
+	else if (keycode == BUT_BIGG)
+		add_top_Z(param, 2);
+	else if (keycode == BUT_LESS)
+		add_top_Z(param, -2);
+	
+	
+
 //	else if (keycode == BUT_C)
 //		coloroze(fdf);
 	
@@ -81,14 +121,14 @@ void	init_fdf(t_fdf *fdf)
 {
 	fdf->img = malloc(sizeof(t_img));
 	init_fdf_img(fdf->img, fdf->mlx);
-	fdf->pr_type = 0;
+	fdf->pxls.pr_type = 0;
 	get_point_arr(fdf->fd, &(fdf->pnts));
 	transform_pnts(fdf, -fdf->pnts.center[X], -fdf->pnts.center[Y], 0);
 	transform_pnts(fdf, IMG_WIDTH/2.0, IMG_HEIGHT/2.0, 0);
 	init_pixel_arr(fdf);
 	printf("POINT   col: %zu\trow: %zu\n", fdf->pnts.col,fdf->pnts.row);
-	fdf->mov_coeff = 3;
-	fdf->rot_coeff = M_PI/180 * 4;
+	fdf->mov_coeff = 0.1;
+ 	fdf->rot_coeff = M_PI/180 * 4;
 	init_rot_mat(fdf);
 }
 
