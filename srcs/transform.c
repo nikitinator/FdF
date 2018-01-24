@@ -6,13 +6,13 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 14:58:23 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/19 16:12:07 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/24 17:03:46 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-void	mov_X(void *param, double n)
+void	mov_x(void *param, double n)
 {
 	t_fdf 	*fdf;
 	size_t	j;
@@ -34,7 +34,7 @@ void	mov_X(void *param, double n)
 	}
 }
 
-void	mov_Y(void *param, double n)
+void	mov_y(void *param, double n)
 {
 	t_fdf 	*fdf;
 	size_t	j;
@@ -56,7 +56,7 @@ void	mov_Y(void *param, double n)
 	}
 }
 
-void	mov_Z(void *param, double n)
+void	mov_z(void *param, double n)
 {
 	t_fdf 	*fdf;
 	size_t	j;
@@ -81,9 +81,9 @@ void	mov_Z(void *param, double n)
 void	transform_pnts(void *param, double x, double y, double z)
 {
 	if (x)
-		mov_X(param, x);
+		mov_x(param, x);
 	if (y)
-		mov_Y(param, y);
+		mov_y(param, y);
 	if (z)
-		mov_Z(param, z);
+		mov_z(param, z);
 }

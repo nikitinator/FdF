@@ -6,7 +6,7 @@
 #    By: snikitin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/20 17:45:38 by snikitin          #+#    #+#              #
-#    Updated: 2018/01/19 18:30:13 by snikitin         ###   ########.fr        #
+#    Updated: 2018/01/24 17:58:03 by snikitin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,6 @@ clean:
 
 fclean: clean
 	make -C $(LIB_DIR) fclean
-	make -C $(MLX_DIR) fclean
 	/bin/rm -rf $(NAME)
 
 re: fclean all

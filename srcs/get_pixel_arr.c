@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 14:53:02 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/21 18:54:36 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/22 18:04:25 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	get_persp_arr(t_pntarr *parr, t_pixarr *pxarr)
 		{
 			if (parr->arr[j][i][Z] != 0)
 			{
-				f_pix[X] = parr->arr[j][i][X] / -(parr->arr[j][i][Z]);
-				f_pix[Y] = parr->arr[j][i][Y] / -(parr->arr[j][i][Z]);
+				f_pix[X] = parr->arr[j][i][X] / (-(parr->arr[j][i][Z]) - 100);
+				f_pix[Y] = parr->arr[j][i][Y] / (-(parr->arr[j][i][Z]) - 100);
 			 
 			f_pix[X] *= coeff;
 			f_pix[Y] *= coeff;
@@ -40,8 +40,8 @@ void	get_persp_arr(t_pntarr *parr, t_pixarr *pxarr)
 			f_pix[X] += IMG_WIDTH / 2;
 			f_pix[Y] += IMG_HEIGHT / 2;
 
-			pxarr->arr[j][i][X] = f_pix[X];
-			pxarr->arr[j][i][Y] = f_pix[Y];
+			pxarr->arr[j][i][X] = f_pix[X] * 100;
+			pxarr->arr[j][i][Y] = f_pix[Y] * 100;
 	
 //			printf("x: %f, y: %f, z:%f\n",
 //					parr->arr[j][i][X], parr->arr[j][i][Y], parr->arr[j][i][Z]);

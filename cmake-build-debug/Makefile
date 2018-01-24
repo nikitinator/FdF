@@ -2148,32 +2148,32 @@ minilibx_macos/mlx_xpm.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx_macos/mlx_xpm.c.s
 .PHONY : minilibx_macos/mlx_xpm.c.s
 
-srcs/drw_line.o: srcs/drw_line.c.o
+srcs/drw_line_bras.o: srcs/drw_line_bras.c.o
 
-.PHONY : srcs/drw_line.o
+.PHONY : srcs/drw_line_bras.o
 
 # target to build an object file
-srcs/drw_line.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/drw_line.c.o
-.PHONY : srcs/drw_line.c.o
+srcs/drw_line_bras.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o
+.PHONY : srcs/drw_line_bras.c.o
 
-srcs/drw_line.i: srcs/drw_line.c.i
+srcs/drw_line_bras.i: srcs/drw_line_bras.c.i
 
-.PHONY : srcs/drw_line.i
+.PHONY : srcs/drw_line_bras.i
 
 # target to preprocess a source file
-srcs/drw_line.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/drw_line.c.i
-.PHONY : srcs/drw_line.c.i
+srcs/drw_line_bras.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/drw_line_bras.c.i
+.PHONY : srcs/drw_line_bras.c.i
 
-srcs/drw_line.s: srcs/drw_line.c.s
+srcs/drw_line_bras.s: srcs/drw_line_bras.c.s
 
-.PHONY : srcs/drw_line.s
+.PHONY : srcs/drw_line_bras.s
 
 # target to generate assembly for a file
-srcs/drw_line.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/drw_line.c.s
-.PHONY : srcs/drw_line.c.s
+srcs/drw_line_bras.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/drw_line_bras.c.s
+.PHONY : srcs/drw_line_bras.c.s
 
 srcs/ft_cntwrd.o: srcs/ft_cntwrd.c.o
 
@@ -2337,6 +2337,33 @@ srcs/get_point_arr.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/get_point_arr.c.s
 .PHONY : srcs/get_point_arr.c.s
 
+srcs/init_rot_mat.o: srcs/init_rot_mat.c.o
+
+.PHONY : srcs/init_rot_mat.o
+
+# target to build an object file
+srcs/init_rot_mat.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o
+.PHONY : srcs/init_rot_mat.c.o
+
+srcs/init_rot_mat.i: srcs/init_rot_mat.c.i
+
+.PHONY : srcs/init_rot_mat.i
+
+# target to preprocess a source file
+srcs/init_rot_mat.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/init_rot_mat.c.i
+.PHONY : srcs/init_rot_mat.c.i
+
+srcs/init_rot_mat.s: srcs/init_rot_mat.c.s
+
+.PHONY : srcs/init_rot_mat.s
+
+# target to generate assembly for a file
+srcs/init_rot_mat.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/init_rot_mat.c.s
+.PHONY : srcs/init_rot_mat.c.s
+
 srcs/main.o: srcs/main.c.o
 
 .PHONY : srcs/main.o
@@ -2363,6 +2390,33 @@ srcs/main.s: srcs/main.c.s
 srcs/main.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/main.c.s
 .PHONY : srcs/main.c.s
+
+srcs/mult_matr.o: srcs/mult_matr.c.o
+
+.PHONY : srcs/mult_matr.o
+
+# target to build an object file
+srcs/mult_matr.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/mult_matr.c.o
+.PHONY : srcs/mult_matr.c.o
+
+srcs/mult_matr.i: srcs/mult_matr.c.i
+
+.PHONY : srcs/mult_matr.i
+
+# target to preprocess a source file
+srcs/mult_matr.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/mult_matr.c.i
+.PHONY : srcs/mult_matr.c.i
+
+srcs/mult_matr.s: srcs/mult_matr.c.s
+
+.PHONY : srcs/mult_matr.s
+
+# target to generate assembly for a file
+srcs/mult_matr.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/mult_matr.c.s
+.PHONY : srcs/mult_matr.c.s
 
 srcs/print_fdf.o: srcs/print_fdf.c.o
 
@@ -2391,32 +2445,86 @@ srcs/print_fdf.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/print_fdf.c.s
 .PHONY : srcs/print_fdf.c.s
 
-srcs/pxl_new.o: srcs/pxl_new.c.o
+srcs/rotate.o: srcs/rotate.c.o
 
-.PHONY : srcs/pxl_new.o
+.PHONY : srcs/rotate.o
 
 # target to build an object file
-srcs/pxl_new.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/pxl_new.c.o
-.PHONY : srcs/pxl_new.c.o
+srcs/rotate.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/rotate.c.o
+.PHONY : srcs/rotate.c.o
 
-srcs/pxl_new.i: srcs/pxl_new.c.i
+srcs/rotate.i: srcs/rotate.c.i
 
-.PHONY : srcs/pxl_new.i
+.PHONY : srcs/rotate.i
 
 # target to preprocess a source file
-srcs/pxl_new.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/pxl_new.c.i
-.PHONY : srcs/pxl_new.c.i
+srcs/rotate.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/rotate.c.i
+.PHONY : srcs/rotate.c.i
 
-srcs/pxl_new.s: srcs/pxl_new.c.s
+srcs/rotate.s: srcs/rotate.c.s
 
-.PHONY : srcs/pxl_new.s
+.PHONY : srcs/rotate.s
 
 # target to generate assembly for a file
-srcs/pxl_new.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/pxl_new.c.s
-.PHONY : srcs/pxl_new.c.s
+srcs/rotate.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/rotate.c.s
+.PHONY : srcs/rotate.c.s
+
+srcs/scale.o: srcs/scale.c.o
+
+.PHONY : srcs/scale.o
+
+# target to build an object file
+srcs/scale.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/scale.c.o
+.PHONY : srcs/scale.c.o
+
+srcs/scale.i: srcs/scale.c.i
+
+.PHONY : srcs/scale.i
+
+# target to preprocess a source file
+srcs/scale.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/scale.c.i
+.PHONY : srcs/scale.c.i
+
+srcs/scale.s: srcs/scale.c.s
+
+.PHONY : srcs/scale.s
+
+# target to generate assembly for a file
+srcs/scale.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/scale.c.s
+.PHONY : srcs/scale.c.s
+
+srcs/transform.o: srcs/transform.c.o
+
+.PHONY : srcs/transform.o
+
+# target to build an object file
+srcs/transform.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/transform.c.o
+.PHONY : srcs/transform.c.o
+
+srcs/transform.i: srcs/transform.c.i
+
+.PHONY : srcs/transform.i
+
+# target to preprocess a source file
+srcs/transform.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/transform.c.i
+.PHONY : srcs/transform.c.i
+
+srcs/transform.s: srcs/transform.c.s
+
+.PHONY : srcs/transform.s
+
+# target to generate assembly for a file
+srcs/transform.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/transform.c.s
+.PHONY : srcs/transform.c.s
 
 # Help Target
 help:
@@ -2652,9 +2760,9 @@ help:
 	@echo "... minilibx_macos/mlx_xpm.o"
 	@echo "... minilibx_macos/mlx_xpm.i"
 	@echo "... minilibx_macos/mlx_xpm.s"
-	@echo "... srcs/drw_line.o"
-	@echo "... srcs/drw_line.i"
-	@echo "... srcs/drw_line.s"
+	@echo "... srcs/drw_line_bras.o"
+	@echo "... srcs/drw_line_bras.i"
+	@echo "... srcs/drw_line_bras.s"
 	@echo "... srcs/ft_cntwrd.o"
 	@echo "... srcs/ft_cntwrd.i"
 	@echo "... srcs/ft_cntwrd.s"
@@ -2673,15 +2781,27 @@ help:
 	@echo "... srcs/get_point_arr.o"
 	@echo "... srcs/get_point_arr.i"
 	@echo "... srcs/get_point_arr.s"
+	@echo "... srcs/init_rot_mat.o"
+	@echo "... srcs/init_rot_mat.i"
+	@echo "... srcs/init_rot_mat.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"
+	@echo "... srcs/mult_matr.o"
+	@echo "... srcs/mult_matr.i"
+	@echo "... srcs/mult_matr.s"
 	@echo "... srcs/print_fdf.o"
 	@echo "... srcs/print_fdf.i"
 	@echo "... srcs/print_fdf.s"
-	@echo "... srcs/pxl_new.o"
-	@echo "... srcs/pxl_new.i"
-	@echo "... srcs/pxl_new.s"
+	@echo "... srcs/rotate.o"
+	@echo "... srcs/rotate.i"
+	@echo "... srcs/rotate.s"
+	@echo "... srcs/scale.o"
+	@echo "... srcs/scale.i"
+	@echo "... srcs/scale.s"
+	@echo "... srcs/transform.o"
+	@echo "... srcs/transform.i"
+	@echo "... srcs/transform.s"
 .PHONY : help
 
 

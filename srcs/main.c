@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:32:09 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/21 18:54:39 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/24 17:55:46 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,33 +61,33 @@ int 	exit_key(int keycode, void *param)
 	if (keycode == 53)
 		exit(1);
 	else if (keycode == BUT_8)
-		mov_Y(param, -fdf->mov_coeff);
+		mov_y(param, -fdf->mov_coeff);
 	else if (keycode == BUT_2)
-		mov_Y(param, fdf->mov_coeff);
+		mov_y(param, fdf->mov_coeff);
 	else if (keycode == BUT_6)
-		mov_X(param, fdf->mov_coeff);
+		mov_x(param, fdf->mov_coeff);
 	else if (keycode == BUT_4)
-		mov_X(param, -fdf->mov_coeff);
+		mov_x(param, -fdf->mov_coeff);
 	else if (keycode == BUT_MIN)
-		mov_Z(param, fdf->mov_coeff);
+		mov_z(param, fdf->mov_coeff);
 	else if (keycode == BUT_PLU)
-		mov_Z(param, -fdf->mov_coeff);	
+		mov_z(param, -fdf->mov_coeff);	
 	else if (keycode == BUT_MUL)
 		scale_pnts(param, 2, 2, 2);
 	else if (keycode == BUT_DIV)
 		scale_pnts(param, 1/2.0, 1/2.0, 1/2.0);
 	else if (keycode == BUT_UP)
-		rotate_X(param, -fdf->rot_coeff);	
+		rotate_x(param, -fdf->rot_coeff);	
 	else if (keycode == BUT_DOWN)
-		rotate_X(param, fdf->rot_coeff);	
+		rotate_x(param, fdf->rot_coeff);	
 	else if (keycode == BUT_LEFT)
-		rotate_Y(param, fdf->rot_coeff);	
+		rotate_y(param, fdf->rot_coeff);	
 	else if (keycode == BUT_RIGHT)
-		rotate_Y(param, -fdf->rot_coeff);	
+		rotate_y(param, -fdf->rot_coeff);	
 	else if (keycode == BUT_UPLF)
-		rotate_Z(param, -fdf->rot_coeff);
+		rotate_z(param, -fdf->rot_coeff);
 	else if (keycode == BUT_DWRI)
-		rotate_Z(param, fdf->rot_coeff);
+		rotate_z(param, fdf->rot_coeff);
 	else if (keycode == BUT_SPACE)
 		change_projection(param);
 	else if (keycode == BUT_BIGG)
@@ -127,7 +127,7 @@ void	init_fdf(t_fdf *fdf)
 	transform_pnts(fdf, IMG_WIDTH/2.0, IMG_HEIGHT/2.0, 0);
 	init_pixel_arr(fdf);
 	printf("POINT   col: %zu\trow: %zu\n", fdf->pnts.col,fdf->pnts.row);
-	fdf->mov_coeff = 0.1;
+	fdf->mov_coeff = 5;
  	fdf->rot_coeff = M_PI/180 * 4;
 	init_rot_mat(fdf);
 }

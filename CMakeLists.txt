@@ -85,14 +85,20 @@ add_executable(FdF
         minilibx_macos/mlx_rgb.c
         minilibx_macos/mlx_shaders.c
         minilibx_macos/mlx_xpm.c
-        srcs/drw_line.c
+        srcs/drw_line_bras.c
         srcs/ft_cntwrd.c
         srcs/ft_countchr.c
         srcs/ft_iswhtsp.c
         srcs/ft_strjoin_free.c
         srcs/get_pixel_arr.c
         srcs/get_point_arr.c
+        srcs/init_rot_mat.c
         srcs/main.c
+        srcs/mult_matr.c
         srcs/print_fdf.c
-        srcs/pxl_new.c
-        Makefile)
+        srcs/rotate.c
+        srcs/scale.c
+        srcs/transform.c
+        Makefile
+        output
+        README.md)

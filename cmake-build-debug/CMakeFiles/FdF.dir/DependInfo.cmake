@@ -79,16 +79,20 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/snikitin/FdF/minilibx_macos/mlx_rgb.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/minilibx_macos/mlx_rgb.c.o"
   "/Users/snikitin/FdF/minilibx_macos/mlx_shaders.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/minilibx_macos/mlx_shaders.c.o"
   "/Users/snikitin/FdF/minilibx_macos/mlx_xpm.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/minilibx_macos/mlx_xpm.c.o"
-  "/Users/snikitin/FdF/srcs/drw_line.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/drw_line.c.o"
+  "/Users/snikitin/FdF/srcs/drw_line_bras.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o"
   "/Users/snikitin/FdF/srcs/ft_cntwrd.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/ft_cntwrd.c.o"
   "/Users/snikitin/FdF/srcs/ft_countchr.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/ft_countchr.c.o"
   "/Users/snikitin/FdF/srcs/ft_iswhtsp.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/ft_iswhtsp.c.o"
   "/Users/snikitin/FdF/srcs/ft_strjoin_free.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/ft_strjoin_free.c.o"
   "/Users/snikitin/FdF/srcs/get_pixel_arr.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/get_pixel_arr.c.o"
   "/Users/snikitin/FdF/srcs/get_point_arr.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/get_point_arr.c.o"
+  "/Users/snikitin/FdF/srcs/init_rot_mat.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o"
   "/Users/snikitin/FdF/srcs/main.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/main.c.o"
+  "/Users/snikitin/FdF/srcs/mult_matr.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/mult_matr.c.o"
   "/Users/snikitin/FdF/srcs/print_fdf.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/print_fdf.c.o"
-  "/Users/snikitin/FdF/srcs/pxl_new.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/pxl_new.c.o"
+  "/Users/snikitin/FdF/srcs/rotate.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/rotate.c.o"
+  "/Users/snikitin/FdF/srcs/scale.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/scale.c.o"
+  "/Users/snikitin/FdF/srcs/transform.c" "/Users/snikitin/FdF/cmake-build-debug/CMakeFiles/FdF.dir/srcs/transform.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

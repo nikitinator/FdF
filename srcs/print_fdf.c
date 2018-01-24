@@ -6,36 +6,37 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 17:28:55 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/21 18:40:24 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/24 17:59:38 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-void	print_fdf(void *mlx, void *win, t_img *img, t_pixarr *pxarr)
+void	print_fdf(void *mlx, void *win, t_img *img, t_pixarr *p)
 {
 	size_t	i;
 	size_t	j;
 
 	ft_bzero(img->arr, IMG_HEIGHT * img->size_line);
 	j = 0;
-	while (j < pxarr->row - 1)
+	while (j < p->row - 1)
 	{
 		i = 0;
-		while (i < pxarr->col - 1)
+		while (i < p->col - 1)
 		{
-			drw_line_bras(img, pxarr->arr[j][i], pxarr->arr[j][i + 1]);
-			drw_line_bras(img, pxarr->arr[j][i], pxarr->arr[j + 1][i]);
+			drw_line_bras(img, p->arr[j][i], p->arr[j][i + 1]);
+			drw_line_bras(img, p->arr[j][i], p->arr[j + 1][i]);
 			i++;
 		}
-		drw_line_bras(img, pxarr->arr[j][i], pxarr->arr[j + 1][i]);
+		drw_line_bras(img, p->arr[j][i], p->arr[j + 1][i]);
 		j++;
 	}
 	i = 0;
-	while (i < pxarr->col - 1)
+	while (i < p->col - 1)
 	{
-		drw_line_bras(img, pxarr->arr[j][i], pxarr->arr[j][i + 1]);
+		drw_line_bras(img, p->arr[j][i], p->arr[j][i + 1]);
 		i++;
 	}
-	mlx_put_image_to_window(mlx, win, img->pnt_img, 0, 0); 
+	SET_PIX(p->arr[j][i][X], p->arr[j][i][Y], img, p->arr[j][i][PXL_CLR]);
+	mlx_put_image_to_window(mlx, win, img->pnt_img, 1, 0);
 }

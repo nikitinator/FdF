@@ -1857,28 +1857,28 @@ CMakeFiles/FdF.dir/minilibx_macos/mlx_xpm.c.o.provides: CMakeFiles/FdF.dir/minil
 CMakeFiles/FdF.dir/minilibx_macos/mlx_xpm.c.o.provides.build: CMakeFiles/FdF.dir/minilibx_macos/mlx_xpm.c.o
 
 
-CMakeFiles/FdF.dir/srcs/drw_line.c.o: CMakeFiles/FdF.dir/flags.make
-CMakeFiles/FdF.dir/srcs/drw_line.c.o: ../srcs/drw_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/FdF.dir/srcs/drw_line.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/drw_line.c.o   -c /Users/snikitin/FdF/srcs/drw_line.c
+CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o: ../srcs/drw_line_bras.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o   -c /Users/snikitin/FdF/srcs/drw_line_bras.c
 
-CMakeFiles/FdF.dir/srcs/drw_line.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/srcs/drw_line.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/snikitin/FdF/srcs/drw_line.c > CMakeFiles/FdF.dir/srcs/drw_line.c.i
+CMakeFiles/FdF.dir/srcs/drw_line_bras.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/srcs/drw_line_bras.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/snikitin/FdF/srcs/drw_line_bras.c > CMakeFiles/FdF.dir/srcs/drw_line_bras.c.i
 
-CMakeFiles/FdF.dir/srcs/drw_line.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/srcs/drw_line.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/snikitin/FdF/srcs/drw_line.c -o CMakeFiles/FdF.dir/srcs/drw_line.c.s
+CMakeFiles/FdF.dir/srcs/drw_line_bras.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/srcs/drw_line_bras.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/snikitin/FdF/srcs/drw_line_bras.c -o CMakeFiles/FdF.dir/srcs/drw_line_bras.c.s
 
-CMakeFiles/FdF.dir/srcs/drw_line.c.o.requires:
+CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o.requires:
 
-.PHONY : CMakeFiles/FdF.dir/srcs/drw_line.c.o.requires
+.PHONY : CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o.requires
 
-CMakeFiles/FdF.dir/srcs/drw_line.c.o.provides: CMakeFiles/FdF.dir/srcs/drw_line.c.o.requires
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/drw_line.c.o.provides.build
-.PHONY : CMakeFiles/FdF.dir/srcs/drw_line.c.o.provides
+CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o.provides: CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o.requires
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o.provides.build
+.PHONY : CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o.provides
 
-CMakeFiles/FdF.dir/srcs/drw_line.c.o.provides.build: CMakeFiles/FdF.dir/srcs/drw_line.c.o
+CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o.provides.build: CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o
 
 
 CMakeFiles/FdF.dir/srcs/ft_cntwrd.c.o: CMakeFiles/FdF.dir/flags.make
@@ -2025,9 +2025,33 @@ CMakeFiles/FdF.dir/srcs/get_point_arr.c.o.provides: CMakeFiles/FdF.dir/srcs/get_
 CMakeFiles/FdF.dir/srcs/get_point_arr.c.o.provides.build: CMakeFiles/FdF.dir/srcs/get_point_arr.c.o
 
 
+CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o: ../srcs/init_rot_mat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o   -c /Users/snikitin/FdF/srcs/init_rot_mat.c
+
+CMakeFiles/FdF.dir/srcs/init_rot_mat.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/srcs/init_rot_mat.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/snikitin/FdF/srcs/init_rot_mat.c > CMakeFiles/FdF.dir/srcs/init_rot_mat.c.i
+
+CMakeFiles/FdF.dir/srcs/init_rot_mat.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/srcs/init_rot_mat.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/snikitin/FdF/srcs/init_rot_mat.c -o CMakeFiles/FdF.dir/srcs/init_rot_mat.c.s
+
+CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o.requires:
+
+.PHONY : CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o.requires
+
+CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o.provides: CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o.requires
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o.provides.build
+.PHONY : CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o.provides
+
+CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o.provides.build: CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o
+
+
 CMakeFiles/FdF.dir/srcs/main.c.o: CMakeFiles/FdF.dir/flags.make
 CMakeFiles/FdF.dir/srcs/main.c.o: ../srcs/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/FdF.dir/srcs/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/FdF.dir/srcs/main.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/main.c.o   -c /Users/snikitin/FdF/srcs/main.c
 
 CMakeFiles/FdF.dir/srcs/main.c.i: cmake_force
@@ -2049,9 +2073,33 @@ CMakeFiles/FdF.dir/srcs/main.c.o.provides: CMakeFiles/FdF.dir/srcs/main.c.o.requ
 CMakeFiles/FdF.dir/srcs/main.c.o.provides.build: CMakeFiles/FdF.dir/srcs/main.c.o
 
 
+CMakeFiles/FdF.dir/srcs/mult_matr.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/srcs/mult_matr.c.o: ../srcs/mult_matr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/FdF.dir/srcs/mult_matr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/mult_matr.c.o   -c /Users/snikitin/FdF/srcs/mult_matr.c
+
+CMakeFiles/FdF.dir/srcs/mult_matr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/srcs/mult_matr.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/snikitin/FdF/srcs/mult_matr.c > CMakeFiles/FdF.dir/srcs/mult_matr.c.i
+
+CMakeFiles/FdF.dir/srcs/mult_matr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/srcs/mult_matr.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/snikitin/FdF/srcs/mult_matr.c -o CMakeFiles/FdF.dir/srcs/mult_matr.c.s
+
+CMakeFiles/FdF.dir/srcs/mult_matr.c.o.requires:
+
+.PHONY : CMakeFiles/FdF.dir/srcs/mult_matr.c.o.requires
+
+CMakeFiles/FdF.dir/srcs/mult_matr.c.o.provides: CMakeFiles/FdF.dir/srcs/mult_matr.c.o.requires
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/mult_matr.c.o.provides.build
+.PHONY : CMakeFiles/FdF.dir/srcs/mult_matr.c.o.provides
+
+CMakeFiles/FdF.dir/srcs/mult_matr.c.o.provides.build: CMakeFiles/FdF.dir/srcs/mult_matr.c.o
+
+
 CMakeFiles/FdF.dir/srcs/print_fdf.c.o: CMakeFiles/FdF.dir/flags.make
 CMakeFiles/FdF.dir/srcs/print_fdf.c.o: ../srcs/print_fdf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/FdF.dir/srcs/print_fdf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/FdF.dir/srcs/print_fdf.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/print_fdf.c.o   -c /Users/snikitin/FdF/srcs/print_fdf.c
 
 CMakeFiles/FdF.dir/srcs/print_fdf.c.i: cmake_force
@@ -2073,28 +2121,76 @@ CMakeFiles/FdF.dir/srcs/print_fdf.c.o.provides: CMakeFiles/FdF.dir/srcs/print_fd
 CMakeFiles/FdF.dir/srcs/print_fdf.c.o.provides.build: CMakeFiles/FdF.dir/srcs/print_fdf.c.o
 
 
-CMakeFiles/FdF.dir/srcs/pxl_new.c.o: CMakeFiles/FdF.dir/flags.make
-CMakeFiles/FdF.dir/srcs/pxl_new.c.o: ../srcs/pxl_new.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/FdF.dir/srcs/pxl_new.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/pxl_new.c.o   -c /Users/snikitin/FdF/srcs/pxl_new.c
+CMakeFiles/FdF.dir/srcs/rotate.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/srcs/rotate.c.o: ../srcs/rotate.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/FdF.dir/srcs/rotate.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/rotate.c.o   -c /Users/snikitin/FdF/srcs/rotate.c
 
-CMakeFiles/FdF.dir/srcs/pxl_new.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/srcs/pxl_new.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/snikitin/FdF/srcs/pxl_new.c > CMakeFiles/FdF.dir/srcs/pxl_new.c.i
+CMakeFiles/FdF.dir/srcs/rotate.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/srcs/rotate.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/snikitin/FdF/srcs/rotate.c > CMakeFiles/FdF.dir/srcs/rotate.c.i
 
-CMakeFiles/FdF.dir/srcs/pxl_new.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/srcs/pxl_new.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/snikitin/FdF/srcs/pxl_new.c -o CMakeFiles/FdF.dir/srcs/pxl_new.c.s
+CMakeFiles/FdF.dir/srcs/rotate.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/srcs/rotate.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/snikitin/FdF/srcs/rotate.c -o CMakeFiles/FdF.dir/srcs/rotate.c.s
 
-CMakeFiles/FdF.dir/srcs/pxl_new.c.o.requires:
+CMakeFiles/FdF.dir/srcs/rotate.c.o.requires:
 
-.PHONY : CMakeFiles/FdF.dir/srcs/pxl_new.c.o.requires
+.PHONY : CMakeFiles/FdF.dir/srcs/rotate.c.o.requires
 
-CMakeFiles/FdF.dir/srcs/pxl_new.c.o.provides: CMakeFiles/FdF.dir/srcs/pxl_new.c.o.requires
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/pxl_new.c.o.provides.build
-.PHONY : CMakeFiles/FdF.dir/srcs/pxl_new.c.o.provides
+CMakeFiles/FdF.dir/srcs/rotate.c.o.provides: CMakeFiles/FdF.dir/srcs/rotate.c.o.requires
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/rotate.c.o.provides.build
+.PHONY : CMakeFiles/FdF.dir/srcs/rotate.c.o.provides
 
-CMakeFiles/FdF.dir/srcs/pxl_new.c.o.provides.build: CMakeFiles/FdF.dir/srcs/pxl_new.c.o
+CMakeFiles/FdF.dir/srcs/rotate.c.o.provides.build: CMakeFiles/FdF.dir/srcs/rotate.c.o
+
+
+CMakeFiles/FdF.dir/srcs/scale.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/srcs/scale.c.o: ../srcs/scale.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/FdF.dir/srcs/scale.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/scale.c.o   -c /Users/snikitin/FdF/srcs/scale.c
+
+CMakeFiles/FdF.dir/srcs/scale.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/srcs/scale.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/snikitin/FdF/srcs/scale.c > CMakeFiles/FdF.dir/srcs/scale.c.i
+
+CMakeFiles/FdF.dir/srcs/scale.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/srcs/scale.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/snikitin/FdF/srcs/scale.c -o CMakeFiles/FdF.dir/srcs/scale.c.s
+
+CMakeFiles/FdF.dir/srcs/scale.c.o.requires:
+
+.PHONY : CMakeFiles/FdF.dir/srcs/scale.c.o.requires
+
+CMakeFiles/FdF.dir/srcs/scale.c.o.provides: CMakeFiles/FdF.dir/srcs/scale.c.o.requires
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/scale.c.o.provides.build
+.PHONY : CMakeFiles/FdF.dir/srcs/scale.c.o.provides
+
+CMakeFiles/FdF.dir/srcs/scale.c.o.provides.build: CMakeFiles/FdF.dir/srcs/scale.c.o
+
+
+CMakeFiles/FdF.dir/srcs/transform.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/srcs/transform.c.o: ../srcs/transform.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/FdF.dir/srcs/transform.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/srcs/transform.c.o   -c /Users/snikitin/FdF/srcs/transform.c
+
+CMakeFiles/FdF.dir/srcs/transform.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/srcs/transform.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/snikitin/FdF/srcs/transform.c > CMakeFiles/FdF.dir/srcs/transform.c.i
+
+CMakeFiles/FdF.dir/srcs/transform.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/srcs/transform.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/snikitin/FdF/srcs/transform.c -o CMakeFiles/FdF.dir/srcs/transform.c.s
+
+CMakeFiles/FdF.dir/srcs/transform.c.o.requires:
+
+.PHONY : CMakeFiles/FdF.dir/srcs/transform.c.o.requires
+
+CMakeFiles/FdF.dir/srcs/transform.c.o.provides: CMakeFiles/FdF.dir/srcs/transform.c.o.requires
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/transform.c.o.provides.build
+.PHONY : CMakeFiles/FdF.dir/srcs/transform.c.o.provides
+
+CMakeFiles/FdF.dir/srcs/transform.c.o.provides.build: CMakeFiles/FdF.dir/srcs/transform.c.o
 
 
 # Object files for target FdF
@@ -2174,16 +2270,20 @@ FdF_OBJECTS = \
 "CMakeFiles/FdF.dir/minilibx_macos/mlx_rgb.c.o" \
 "CMakeFiles/FdF.dir/minilibx_macos/mlx_shaders.c.o" \
 "CMakeFiles/FdF.dir/minilibx_macos/mlx_xpm.c.o" \
-"CMakeFiles/FdF.dir/srcs/drw_line.c.o" \
+"CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o" \
 "CMakeFiles/FdF.dir/srcs/ft_cntwrd.c.o" \
 "CMakeFiles/FdF.dir/srcs/ft_countchr.c.o" \
 "CMakeFiles/FdF.dir/srcs/ft_iswhtsp.c.o" \
 "CMakeFiles/FdF.dir/srcs/ft_strjoin_free.c.o" \
 "CMakeFiles/FdF.dir/srcs/get_pixel_arr.c.o" \
 "CMakeFiles/FdF.dir/srcs/get_point_arr.c.o" \
+"CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o" \
 "CMakeFiles/FdF.dir/srcs/main.c.o" \
+"CMakeFiles/FdF.dir/srcs/mult_matr.c.o" \
 "CMakeFiles/FdF.dir/srcs/print_fdf.c.o" \
-"CMakeFiles/FdF.dir/srcs/pxl_new.c.o"
+"CMakeFiles/FdF.dir/srcs/rotate.c.o" \
+"CMakeFiles/FdF.dir/srcs/scale.c.o" \
+"CMakeFiles/FdF.dir/srcs/transform.c.o"
 
 # External object files for target FdF
 FdF_EXTERNAL_OBJECTS =
@@ -2263,19 +2363,23 @@ FdF: CMakeFiles/FdF.dir/minilibx_macos/mlx_int_str_to_wordtab.c.o
 FdF: CMakeFiles/FdF.dir/minilibx_macos/mlx_rgb.c.o
 FdF: CMakeFiles/FdF.dir/minilibx_macos/mlx_shaders.c.o
 FdF: CMakeFiles/FdF.dir/minilibx_macos/mlx_xpm.c.o
-FdF: CMakeFiles/FdF.dir/srcs/drw_line.c.o
+FdF: CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o
 FdF: CMakeFiles/FdF.dir/srcs/ft_cntwrd.c.o
 FdF: CMakeFiles/FdF.dir/srcs/ft_countchr.c.o
 FdF: CMakeFiles/FdF.dir/srcs/ft_iswhtsp.c.o
 FdF: CMakeFiles/FdF.dir/srcs/ft_strjoin_free.c.o
 FdF: CMakeFiles/FdF.dir/srcs/get_pixel_arr.c.o
 FdF: CMakeFiles/FdF.dir/srcs/get_point_arr.c.o
+FdF: CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o
 FdF: CMakeFiles/FdF.dir/srcs/main.c.o
+FdF: CMakeFiles/FdF.dir/srcs/mult_matr.c.o
 FdF: CMakeFiles/FdF.dir/srcs/print_fdf.c.o
-FdF: CMakeFiles/FdF.dir/srcs/pxl_new.c.o
+FdF: CMakeFiles/FdF.dir/srcs/rotate.c.o
+FdF: CMakeFiles/FdF.dir/srcs/scale.c.o
+FdF: CMakeFiles/FdF.dir/srcs/transform.c.o
 FdF: CMakeFiles/FdF.dir/build.make
 FdF: CMakeFiles/FdF.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Linking C executable FdF"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/snikitin/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Linking C executable FdF"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FdF.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2358,16 +2462,20 @@ CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/minilibx_macos/mlx_int_str_to_wo
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/minilibx_macos/mlx_rgb.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/minilibx_macos/mlx_shaders.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/minilibx_macos/mlx_xpm.c.o.requires
-CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/drw_line.c.o.requires
+CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/drw_line_bras.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/ft_cntwrd.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/ft_countchr.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/ft_iswhtsp.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/ft_strjoin_free.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/get_pixel_arr.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/get_point_arr.c.o.requires
+CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/init_rot_mat.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/main.c.o.requires
+CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/mult_matr.c.o.requires
 CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/print_fdf.c.o.requires
-CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/pxl_new.c.o.requires
+CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/rotate.c.o.requires
+CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/scale.c.o.requires
+CMakeFiles/FdF.dir/requires: CMakeFiles/FdF.dir/srcs/transform.c.o.requires
 
 .PHONY : CMakeFiles/FdF.dir/requires
 

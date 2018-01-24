@@ -6,13 +6,13 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 15:37:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/19 16:15:09 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/24 16:57:01 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-void	rotate_X(void *param, double rot_coeff)
+void	rotate_x(void *param, double rot_coeff)
 {
 	t_fdf 	*fdf;
 	t_point temp;
@@ -22,15 +22,15 @@ void	rotate_X(void *param, double rot_coeff)
 	temp[Y] = fdf->pnts.center[Y];
 	temp[Z] = fdf->pnts.center[Z];
 
-	set_rot_mat_X(fdf, rot_coeff);
+	set_rot_mat_x(fdf, rot_coeff);
 	transform_pnts(param, -fdf->pnts.center[X], -fdf->pnts.center[Y],
 		   	-fdf->pnts.center[Z]);
-	mult_matr(fdf->rot_X, &fdf->pnts);
+	mult_matr(fdf->rot_x, &fdf->pnts);
 	transform_pnts(param, temp[X], temp[Y], temp[Z]);
 	ft_putendl("rotate_X_test");
 }
 
-void	rotate_Y(void *param, double rot_coeff)
+void	rotate_y(void *param, double rot_coeff)
 {
 	t_fdf 	*fdf;
 	t_point temp;
@@ -40,17 +40,17 @@ void	rotate_Y(void *param, double rot_coeff)
 	temp[Y] = fdf->pnts.center[Y];
 	temp[Z] = fdf->pnts.center[Z];
 
-	set_rot_mat_Y(fdf, rot_coeff);
+	set_rot_mat_x(fdf, rot_coeff);
 	transform_pnts(param, -fdf->pnts.center[X], -fdf->pnts.center[Y],
 		   	-fdf->pnts.center[Z]);
-	mult_matr(fdf->rot_Y, &fdf->pnts);
+	mult_matr(fdf->rot_y, &fdf->pnts);
 	transform_pnts(param, temp[X], temp[Y], temp[Z]);
 	
 	ft_putendl("rotate_Y_test");
 }
 
 
-void	rotate_Z(void *param, double rot_coeff)
+void	rotate_z(void *param, double rot_coeff)
 {
 	t_fdf 	*fdf;
 	t_point temp;
@@ -60,10 +60,10 @@ void	rotate_Z(void *param, double rot_coeff)
 	temp[Y] = fdf->pnts.center[Y];
 	temp[Z] = fdf->pnts.center[Z];
 
-	set_rot_mat_Z(fdf, rot_coeff);
+	set_rot_mat_z(fdf, rot_coeff);
 	transform_pnts(param, -fdf->pnts.center[X], -fdf->pnts.center[Y],
 		   	-fdf->pnts.center[Z]);
-	mult_matr(fdf->rot_Z, &fdf->pnts);
+	mult_matr(fdf->rot_z, &fdf->pnts);
 	transform_pnts(param, temp[X], temp[Y], temp[Z]);
 	ft_putendl("rotate_Z_test");
 }

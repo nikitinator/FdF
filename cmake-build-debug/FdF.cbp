@@ -85,6 +85,9 @@
 		<Unit filename="/Users/snikitin/FdF/Makefile">
 			<Option target="FdF"/>
 		</Unit>
+		<Unit filename="/Users/snikitin/FdF/README.md">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/snikitin/FdF/includes/fdf.h">
 			<Option target="FdF"/>
 		</Unit>
@@ -328,7 +331,10 @@
 		<Unit filename="/Users/snikitin/FdF/minilibx_macos/mlx_xpm.c">
 			<Option target="FdF"/>
 		</Unit>
-		<Unit filename="/Users/snikitin/FdF/srcs/drw_line.c">
+		<Unit filename="/Users/snikitin/FdF/output">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/srcs/drw_line_bras.c">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/snikitin/FdF/srcs/ft_cntwrd.c">
@@ -349,13 +355,25 @@
 		<Unit filename="/Users/snikitin/FdF/srcs/get_point_arr.c">
 			<Option target="FdF"/>
 		</Unit>
+		<Unit filename="/Users/snikitin/FdF/srcs/init_rot_mat.c">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/snikitin/FdF/srcs/main.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/srcs/mult_matr.c">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/snikitin/FdF/srcs/print_fdf.c">
 			<Option target="FdF"/>
 		</Unit>
-		<Unit filename="/Users/snikitin/FdF/srcs/pxl_new.c">
+		<Unit filename="/Users/snikitin/FdF/srcs/rotate.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/srcs/scale.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/srcs/transform.c">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/snikitin/FdF/CMakeLists.txt">
