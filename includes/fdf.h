@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/24 18:03:38 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/26 16:03:57 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # include <math.h>
 # include "../minilibx_macos/mlx.h"
 # include "../libft/libft.h"
+
+# define MOV_COEFF 5
+# define SCL3_COEFF 5
+# define MOV_COEFF 5
 
 # define X 0
 # define Y 1
@@ -42,10 +46,6 @@
 # define BUT_2 84
 # define BUT_MIN 78
 # define BUT_PLU 69
-# define BUT_J 38
-# define BUT_K 40
-# define BUT_H 4
-# define BUT_L 37
 # define BUT_MUL 75
 # define BUT_DIV 67
 # define BUT_SPACE 49
@@ -58,6 +58,15 @@
 # define BUT_C 8
 # define BUT_BIGG 47
 # define BUT_LESS 43
+# define BUT_A 0
+# define BUT_S 1
+# define BUT_D 2
+# define BUT_Q 12
+# define BUT_W 13
+# define BUT_E 14
+# define BUT_C 8
+# define BUT_ESC 53
+
 
 # define ORTOGONAL 0
 # define PERSPECTIVE 1
@@ -91,7 +100,7 @@ typedef struct	s_drw_ln
 	int		error;
 	int		error_2;
 	double	pix_num;
-	int		t[3];
+	int		t[2];
 	float	c[3];
 	float	m[3];
 	t_color	c1;
@@ -196,5 +205,35 @@ void		get_point_arr(int fd, t_pntarr *parr);
 void		init_pixel_arr(t_fdf *fdf);
 void		get_pixel_arr(t_pntarr *parr, t_pixarr *pixarr);
 void		drw_line_bras(t_img *img, t_pixel pixel1, t_pixel pixel2);
+
+void		scale_inc(void *param);
+void		scale_dec(void *param);
+
+void		mov_x_inc(void *param);
+void		mov_y_inc(void *param);
+void		mov_z_inc(void *param);
+void		mov_x_dec(void *param);
+void		mov_y_dec(void *param);
+void		mov_z_dec(void *param);
+
+
+void		rotate_x_inc(void *param);
+void		rotate_y_inc(void *param);
+void		rotate_z_inc(void *param);
+void		rotate_x_dec(void *param);
+void		rotate_y_dec(void *param);
+void		rotate_z_dec(void *param);
+
+
+void		add_red(t_fdf *fdf);
+void		add_grn(t_fdf *fdf);
+void		add_blu(t_fdf *fdf);
+void		sub_red(t_fdf *fdf);
+void		sub_grn(t_fdf *fdf);
+void		sub_blu(t_fdf *fdf);
+
+void		apply_on_pntarr(t_fdf *fdf, void (f)(t_point *));
+void		apply_on_pixarr(t_fdf *fdf, void (f)(t_point *));
+
 
 #endif

@@ -1,21 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iswhtsp.c                                       :+:      :+:    :+:   */
+/*   colorize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/20 13:51:24 by snikitin          #+#    #+#             */
-/*   Updated: 2017/12/20 14:08:08 by snikitin         ###   ########.fr       */
+/*   Created: 2018/01/24 19:31:19 by snikitin          #+#    #+#             */
+/*   Updated: 2018/01/26 16:37:09 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-int		ft_iswhtsp(int c)
+static void	get_upper_lower(t_pntarr *p, int *upper, int *lower)
 {
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\r'
-			|| c == '\f' || c == '\v')
-		return (1);
-	return (0);
+	size_t	j;
+	size_t	i;
+
+	*upper = 0;
+	*lower = 0;
+	j = 0;
+	while (j < fdf->p.row)
+	{
+		i = 0;
+		while (i < fdf->ps.col)
+		{
+			if (p.arr[j][i][Z] > *upper)
+				*upper = p.arr[j][i][Z];
+			if (p.arr[j][i][Z] < *lower)
+				*upper = p.arr[j][i][Z];
+			i++;
+		}
+		j++;
+	}
+}
+
+void	colorize_fdf(t_fdf *fdf)
+{
+	int		upper;
+	int		lower;
+	
+		
 }

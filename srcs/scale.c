@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 16:21:29 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/24 16:40:32 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/26 16:26:23 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,46 @@ void	scale_pnts(void	*param, double x, double y, double z)
 		}
 		j++;
 	}
+	transform_pnts(param, temp[X], temp[Y], temp[Z]);
+}
+
+void	scale_inc_vec(t_fdf *fdf)
+{
+	fdf->pnts.arr[j][i][X] *= x;
+	fdf->pnts.arr[j][i][Y] *= y;
+	fdf->pnts.arr[j][i][Z] *= z;
+}
+			
+void	scale_inc(t_fdf *fdf)
+{
+	double	temp[3];
+
+	temp[X] = fdf->pnts.center[X];
+	temp[Y] = fdf->pnts.center[Y];
+	temp[Z] = fdf->pnts.center[Z];
+	transform_pnts(param, -fdf->pnts.center[X], -fdf->pnts.center[Y],
+		   	-fdf->pnts.center[Z]);
+	apply_on_pntarr(fdf, scale_inc_vec);
+	transform_pnts(param, temp[X], temp[Y], temp[Z]);
+}
+
+void	scale_dec_vec(t_fdf *fdf)
+{
+
+	fdf->pnts.arr[j][i][X] /= x;
+	fdf->pnts.arr[j][i][Y] /= y;
+	fdf->pnts.arr[j][i][Z] /= z;
+}
+
+void	scale_dec(void *param)
+{
+	double	temp[3];
+
+	temp[X] = fdf->pnts.center[X];
+	temp[Y] = fdf->pnts.center[Y];
+	temp[Z] = fdf->pnts.center[Z];
+	transform_pnts(param, -fdf->pnts.center[X], -fdf->pnts.center[Y],
+		   	-fdf->pnts.center[Z]);
+	apply_on_pntarr(fdf, scale_dec_vec);
 	transform_pnts(param, temp[X], temp[Y], temp[Z]);
 }

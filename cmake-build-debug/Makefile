@@ -1932,6 +1932,33 @@ libft/ft_strtrim.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/libft/ft_strtrim.c.s
 .PHONY : libft/ft_strtrim.c.s
 
+libft/ft_swap_int.o: libft/ft_swap_int.c.o
+
+.PHONY : libft/ft_swap_int.o
+
+# target to build an object file
+libft/ft_swap_int.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/libft/ft_swap_int.c.o
+.PHONY : libft/ft_swap_int.c.o
+
+libft/ft_swap_int.i: libft/ft_swap_int.c.i
+
+.PHONY : libft/ft_swap_int.i
+
+# target to preprocess a source file
+libft/ft_swap_int.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/libft/ft_swap_int.c.i
+.PHONY : libft/ft_swap_int.c.i
+
+libft/ft_swap_int.s: libft/ft_swap_int.c.s
+
+.PHONY : libft/ft_swap_int.s
+
+# target to generate assembly for a file
+libft/ft_swap_int.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/libft/ft_swap_int.c.s
+.PHONY : libft/ft_swap_int.c.s
+
 libft/ft_tolower.o: libft/ft_tolower.c.o
 
 .PHONY : libft/ft_tolower.o
@@ -2148,6 +2175,87 @@ minilibx_macos/mlx_xpm.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx_macos/mlx_xpm.c.s
 .PHONY : minilibx_macos/mlx_xpm.c.s
 
+srcs/add_color.o: srcs/add_color.c.o
+
+.PHONY : srcs/add_color.o
+
+# target to build an object file
+srcs/add_color.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/add_color.c.o
+.PHONY : srcs/add_color.c.o
+
+srcs/add_color.i: srcs/add_color.c.i
+
+.PHONY : srcs/add_color.i
+
+# target to preprocess a source file
+srcs/add_color.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/add_color.c.i
+.PHONY : srcs/add_color.c.i
+
+srcs/add_color.s: srcs/add_color.c.s
+
+.PHONY : srcs/add_color.s
+
+# target to generate assembly for a file
+srcs/add_color.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/add_color.c.s
+.PHONY : srcs/add_color.c.s
+
+srcs/apply.o: srcs/apply.c.o
+
+.PHONY : srcs/apply.o
+
+# target to build an object file
+srcs/apply.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/apply.c.o
+.PHONY : srcs/apply.c.o
+
+srcs/apply.i: srcs/apply.c.i
+
+.PHONY : srcs/apply.i
+
+# target to preprocess a source file
+srcs/apply.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/apply.c.i
+.PHONY : srcs/apply.c.i
+
+srcs/apply.s: srcs/apply.c.s
+
+.PHONY : srcs/apply.s
+
+# target to generate assembly for a file
+srcs/apply.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/apply.c.s
+.PHONY : srcs/apply.c.s
+
+srcs/colorize.o: srcs/colorize.c.o
+
+.PHONY : srcs/colorize.o
+
+# target to build an object file
+srcs/colorize.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/colorize.c.o
+.PHONY : srcs/colorize.c.o
+
+srcs/colorize.i: srcs/colorize.c.i
+
+.PHONY : srcs/colorize.i
+
+# target to preprocess a source file
+srcs/colorize.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/colorize.c.i
+.PHONY : srcs/colorize.c.i
+
+srcs/colorize.s: srcs/colorize.c.s
+
+.PHONY : srcs/colorize.s
+
+# target to generate assembly for a file
+srcs/colorize.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/colorize.c.s
+.PHONY : srcs/colorize.c.s
+
 srcs/drw_line_bras.o: srcs/drw_line_bras.c.o
 
 .PHONY : srcs/drw_line_bras.o
@@ -2174,114 +2282,6 @@ srcs/drw_line_bras.s: srcs/drw_line_bras.c.s
 srcs/drw_line_bras.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/drw_line_bras.c.s
 .PHONY : srcs/drw_line_bras.c.s
-
-srcs/ft_cntwrd.o: srcs/ft_cntwrd.c.o
-
-.PHONY : srcs/ft_cntwrd.o
-
-# target to build an object file
-srcs/ft_cntwrd.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_cntwrd.c.o
-.PHONY : srcs/ft_cntwrd.c.o
-
-srcs/ft_cntwrd.i: srcs/ft_cntwrd.c.i
-
-.PHONY : srcs/ft_cntwrd.i
-
-# target to preprocess a source file
-srcs/ft_cntwrd.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_cntwrd.c.i
-.PHONY : srcs/ft_cntwrd.c.i
-
-srcs/ft_cntwrd.s: srcs/ft_cntwrd.c.s
-
-.PHONY : srcs/ft_cntwrd.s
-
-# target to generate assembly for a file
-srcs/ft_cntwrd.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_cntwrd.c.s
-.PHONY : srcs/ft_cntwrd.c.s
-
-srcs/ft_countchr.o: srcs/ft_countchr.c.o
-
-.PHONY : srcs/ft_countchr.o
-
-# target to build an object file
-srcs/ft_countchr.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_countchr.c.o
-.PHONY : srcs/ft_countchr.c.o
-
-srcs/ft_countchr.i: srcs/ft_countchr.c.i
-
-.PHONY : srcs/ft_countchr.i
-
-# target to preprocess a source file
-srcs/ft_countchr.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_countchr.c.i
-.PHONY : srcs/ft_countchr.c.i
-
-srcs/ft_countchr.s: srcs/ft_countchr.c.s
-
-.PHONY : srcs/ft_countchr.s
-
-# target to generate assembly for a file
-srcs/ft_countchr.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_countchr.c.s
-.PHONY : srcs/ft_countchr.c.s
-
-srcs/ft_iswhtsp.o: srcs/ft_iswhtsp.c.o
-
-.PHONY : srcs/ft_iswhtsp.o
-
-# target to build an object file
-srcs/ft_iswhtsp.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_iswhtsp.c.o
-.PHONY : srcs/ft_iswhtsp.c.o
-
-srcs/ft_iswhtsp.i: srcs/ft_iswhtsp.c.i
-
-.PHONY : srcs/ft_iswhtsp.i
-
-# target to preprocess a source file
-srcs/ft_iswhtsp.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_iswhtsp.c.i
-.PHONY : srcs/ft_iswhtsp.c.i
-
-srcs/ft_iswhtsp.s: srcs/ft_iswhtsp.c.s
-
-.PHONY : srcs/ft_iswhtsp.s
-
-# target to generate assembly for a file
-srcs/ft_iswhtsp.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_iswhtsp.c.s
-.PHONY : srcs/ft_iswhtsp.c.s
-
-srcs/ft_strjoin_free.o: srcs/ft_strjoin_free.c.o
-
-.PHONY : srcs/ft_strjoin_free.o
-
-# target to build an object file
-srcs/ft_strjoin_free.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_strjoin_free.c.o
-.PHONY : srcs/ft_strjoin_free.c.o
-
-srcs/ft_strjoin_free.i: srcs/ft_strjoin_free.c.i
-
-.PHONY : srcs/ft_strjoin_free.i
-
-# target to preprocess a source file
-srcs/ft_strjoin_free.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_strjoin_free.c.i
-.PHONY : srcs/ft_strjoin_free.c.i
-
-srcs/ft_strjoin_free.s: srcs/ft_strjoin_free.c.s
-
-.PHONY : srcs/ft_strjoin_free.s
-
-# target to generate assembly for a file
-srcs/ft_strjoin_free.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/ft_strjoin_free.c.s
-.PHONY : srcs/ft_strjoin_free.c.s
 
 srcs/get_pixel_arr.o: srcs/get_pixel_arr.c.o
 
@@ -2498,6 +2498,33 @@ srcs/scale.s: srcs/scale.c.s
 srcs/scale.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/scale.c.s
 .PHONY : srcs/scale.c.s
+
+srcs/sub_color.o: srcs/sub_color.c.o
+
+.PHONY : srcs/sub_color.o
+
+# target to build an object file
+srcs/sub_color.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/sub_color.c.o
+.PHONY : srcs/sub_color.c.o
+
+srcs/sub_color.i: srcs/sub_color.c.i
+
+.PHONY : srcs/sub_color.i
+
+# target to preprocess a source file
+srcs/sub_color.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/sub_color.c.i
+.PHONY : srcs/sub_color.c.i
+
+srcs/sub_color.s: srcs/sub_color.c.s
+
+.PHONY : srcs/sub_color.s
+
+# target to generate assembly for a file
+srcs/sub_color.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/srcs/sub_color.c.s
+.PHONY : srcs/sub_color.c.s
 
 srcs/transform.o: srcs/transform.c.o
 
@@ -2736,6 +2763,9 @@ help:
 	@echo "... libft/ft_strtrim.o"
 	@echo "... libft/ft_strtrim.i"
 	@echo "... libft/ft_strtrim.s"
+	@echo "... libft/ft_swap_int.o"
+	@echo "... libft/ft_swap_int.i"
+	@echo "... libft/ft_swap_int.s"
 	@echo "... libft/ft_tolower.o"
 	@echo "... libft/ft_tolower.i"
 	@echo "... libft/ft_tolower.s"
@@ -2760,21 +2790,18 @@ help:
 	@echo "... minilibx_macos/mlx_xpm.o"
 	@echo "... minilibx_macos/mlx_xpm.i"
 	@echo "... minilibx_macos/mlx_xpm.s"
+	@echo "... srcs/add_color.o"
+	@echo "... srcs/add_color.i"
+	@echo "... srcs/add_color.s"
+	@echo "... srcs/apply.o"
+	@echo "... srcs/apply.i"
+	@echo "... srcs/apply.s"
+	@echo "... srcs/colorize.o"
+	@echo "... srcs/colorize.i"
+	@echo "... srcs/colorize.s"
 	@echo "... srcs/drw_line_bras.o"
 	@echo "... srcs/drw_line_bras.i"
 	@echo "... srcs/drw_line_bras.s"
-	@echo "... srcs/ft_cntwrd.o"
-	@echo "... srcs/ft_cntwrd.i"
-	@echo "... srcs/ft_cntwrd.s"
-	@echo "... srcs/ft_countchr.o"
-	@echo "... srcs/ft_countchr.i"
-	@echo "... srcs/ft_countchr.s"
-	@echo "... srcs/ft_iswhtsp.o"
-	@echo "... srcs/ft_iswhtsp.i"
-	@echo "... srcs/ft_iswhtsp.s"
-	@echo "... srcs/ft_strjoin_free.o"
-	@echo "... srcs/ft_strjoin_free.i"
-	@echo "... srcs/ft_strjoin_free.s"
 	@echo "... srcs/get_pixel_arr.o"
 	@echo "... srcs/get_pixel_arr.i"
 	@echo "... srcs/get_pixel_arr.s"
@@ -2799,6 +2826,9 @@ help:
 	@echo "... srcs/scale.o"
 	@echo "... srcs/scale.i"
 	@echo "... srcs/scale.s"
+	@echo "... srcs/sub_color.o"
+	@echo "... srcs/sub_color.i"
+	@echo "... srcs/sub_color.s"
 	@echo "... srcs/transform.o"
 	@echo "... srcs/transform.i"
 	@echo "... srcs/transform.s"

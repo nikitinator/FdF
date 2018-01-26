@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cntwrd.c                                        :+:      :+:    :+:   */
+/*   add_color.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/20 13:47:43 by snikitin          #+#    #+#             */
-/*   Updated: 2017/12/20 14:04:37 by snikitin         ###   ########.fr       */
+/*   Created: 2018/01/24 20:02:31 by snikitin          #+#    #+#             */
+/*   Updated: 2018/01/26 14:25:32 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-size_t	ft_cntwrd(char *str)
+void	add_red(t_fdf *fdf)
 {
-	size_t	n;
-	char	inword;
+	if (fdf->pxls.arr[j][i][PXL_CLR] & 0x00110000 != 0x00FF0000)
+		fdf->pxls.arr[j][i][PXL_CLR] += 0x00FF0000;
+}
 
-	if (!str)
-		return (0);
-	n = 0;
-	inword = 0;
-	while (*str)
-	{
-		if (!ft_iswhtsp(*str) && !inword)
-		{
-			inword = 1;
-			n++;
-		}
-		if (inword && ft_iswhtsp(*(str + 1)))
-			inword = 0;
-		str++;
-	}
-	return (n);
+void	add_grn(t_fdf *fdf)
+{
+	if (fdf->pxls.arr[j][i][PXL_CLR] & 0x001100 != 0x0000FF00)
+		fdf->pxls.arr[j][i][PXL_CLR] += 0x00001100;
+}
+
+void	add_blu(t_fdf *fdf)
+{
+	if (fdf->pxls.arr[j][i][PXL_CLR] & 0x0000011 != 0x000000FF)
+		fdf->pxls.arr[j][i][PXL_CLR] += 0x00000011;
 }

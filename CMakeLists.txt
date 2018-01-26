@@ -72,6 +72,7 @@ add_executable(FdF
         libft/ft_strstr.c
         libft/ft_strsub.c
         libft/ft_strtrim.c
+        libft/ft_swap_int.c
         libft/ft_tolower.c
         libft/ft_toupper.c
         libft/get_next_line.c
@@ -85,11 +86,10 @@ add_executable(FdF
         minilibx_macos/mlx_rgb.c
         minilibx_macos/mlx_shaders.c
         minilibx_macos/mlx_xpm.c
+        srcs/add_color.c
+        srcs/apply.c
+        srcs/colorize.c
         srcs/drw_line_bras.c
-        srcs/ft_cntwrd.c
-        srcs/ft_countchr.c
-        srcs/ft_iswhtsp.c
-        srcs/ft_strjoin_free.c
         srcs/get_pixel_arr.c
         srcs/get_point_arr.c
         srcs/init_rot_mat.c
@@ -98,7 +98,33 @@ add_executable(FdF
         srcs/print_fdf.c
         srcs/rotate.c
         srcs/scale.c
+        srcs/sub_color.c
         srcs/transform.c
+        test_maps/1.fdf
+        test_maps/10-2.fdf
+        test_maps/10-70.fdf
+        test_maps/100-6.fdf
+        test_maps/20-60.fdf
+        test_maps/42.fdf
+        test_maps/50-4.fdf
+        test_maps/basictest.fdf
+        test_maps/elem-col.fdf
+        test_maps/elem-fract.fdf
+        test_maps/elem.fdf
+        test_maps/elem2.fdf
+        test_maps/fdf
+        test_maps/IGN_Reunion_MNT250_ASC_OCEAN0_XXL.fdf
+        test_maps/julia.fdf
+        test_maps/mars.fdf
+        test_maps/pentenegpos.fdf
+        test_maps/plat.fdf
+        test_maps/pnp_flat.fdf
+        test_maps/pylone.fdf
+        test_maps/pyra.fdf
+        test_maps/pyramide.fdf
+        test_maps/t1.fdf
+        test_maps/t2.fdf
+        test_maps/trash
+        CMakeLists.txt
         Makefile
-        output
-        README.md)
+        output)

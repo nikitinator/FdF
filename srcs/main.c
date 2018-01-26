@@ -6,13 +6,12 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:32:09 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/24 17:55:46 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/26 15:34:50 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include <stdio.h>
-
 
 void	add_top_Z(t_fdf *fdf, double n)
 {
@@ -42,7 +41,7 @@ void	change_projection(void *param)
 	if (fdf->pxls.pr_type == ORTOGONAL)
 	{
 		transform_pnts(fdf, -(IMG_WIDTH/2.0), -(IMG_HEIGHT/2.0), 0);
-		fdf->pxls.pr_type=PERSPECTIVE;
+		fdf->pxls.pr_type = PERSPECTIVE;
 	}
 	else
 	{
@@ -56,9 +55,34 @@ int 	exit_key(int keycode, void *param)
 {
 	t_fdf 	*fdf;
 	fdf = (t_fdf *)param;
+	int		i;
+
+	i = 0;
+	t_func_key_hook	func[20] = {
+		{BUT_8,     mov_x_dec},
+		{BUT_4,     mov_y_dec},
+		{BUT_6,     mov_y_inc},
+		{BUT_2,     mov_x_inc},
+		{BUT_MIN,   mov_z_dec},
+		{BUT_PLU,   mov_z_inc},
+		{BUT_MUL,   scale_inc},
+		{BUT_DIV ,  scale_dec},
+		{BUT_SPACE, change_projection},
+		{BUT_UP,    rotate_x_inc}, {BUT_DOWN,  rotate_x_dec},
+		{BUT_LEFT,  rotate_y_inc}, {BUT_RIGHT, rotate_y_dec},
+		{BUT_UPLF,  rotate_z_inc}, {BUT_DWRI,  rotate_z_dec},
+		{BUT_A, sub_red}, {BUT_S, sub_grn}, {BUT_D, sub_blu},
+		{BUT_Q, add_red}, {BUT_W, add_grn}, {BUT_E, add_blu},
+		};
+	while (i < 20)
+	{
+
+		
+	}
+
 
 	printf("exit givno, %d\n", keycode);
-	if (keycode == 53)
+	if (keycode == BUT_ESC)
 		exit(1);
 	else if (keycode == BUT_8)
 		mov_y(param, -fdf->mov_coeff);
@@ -77,30 +101,41 @@ int 	exit_key(int keycode, void *param)
 	else if (keycode == BUT_DIV)
 		scale_pnts(param, 1/2.0, 1/2.0, 1/2.0);
 	else if (keycode == BUT_UP)
-		rotate_x(param, -fdf->rot_coeff);	
+		rotate_x_inc(param);
 	else if (keycode == BUT_DOWN)
-		rotate_x(param, fdf->rot_coeff);	
+		rotate_x_dec(param);
 	else if (keycode == BUT_LEFT)
-		rotate_y(param, fdf->rot_coeff);	
+		rotate_y_inc(param);
 	else if (keycode == BUT_RIGHT)
-		rotate_y(param, -fdf->rot_coeff);	
+		rotate_y_dec(param);
 	else if (keycode == BUT_UPLF)
-		rotate_z(param, -fdf->rot_coeff);
+		rotate_z_inc(param);
 	else if (keycode == BUT_DWRI)
-		rotate_z(param, fdf->rot_coeff);
+		rotate_z_dec(param);
 	else if (keycode == BUT_SPACE)
 		change_projection(param);
 	else if (keycode == BUT_BIGG)
 		add_top_Z(param, 2);
 	else if (keycode == BUT_LESS)
 		add_top_Z(param, -2);
-	
-	
-
+	else if (keycode == BUT_Q)
+		add_red(param);
+	else if (keycode == BUT_W)
+		add_grn(param);
+	else if (keycode == BUT_E)
+		add_blu(param);
+	else if (keycode == BUT_A)
+		sub_red(param);
+	else if (keycode == BUT_S)
+		sub_grn(param);
+	else if (keycode == BUT_D)
+		sub_blu(param);
 //	else if (keycode == BUT_C)
-//		coloroze(fdf);
+//		colorize(param);
+//		jjjjjj
+
+
 	
-	//init_pixel_arr(fdf);
 	get_pixel_arr(&fdf->pnts, &fdf->pxls);
 	print_fdf(fdf->mlx, fdf->win, fdf->img, &fdf->pxls);
 	return(0);
@@ -144,7 +179,6 @@ int		main(int argc, char **argv)
 		if (!(fdf.win = mlx_new_window(fdf.mlx,
 						IMG_WIDTH, IMG_HEIGHT, "mlx 42")))
 			return (-1);
-		
 		init_fdf(&fdf);
 		print_fdf(fdf.mlx, fdf.win, fdf.img, &fdf.pxls);
         mlx_hook(fdf.win, 2, 5, exit_key, &fdf);

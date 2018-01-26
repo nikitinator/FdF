@@ -1,24 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
+/*   apply.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/18 13:59:29 by snikitin          #+#    #+#             */
-/*   Updated: 2017/12/18 14:08:42 by snikitin         ###   ########.fr       */
+/*   Created: 2018/01/25 16:48:49 by snikitin          #+#    #+#             */
+/*   Updated: 2018/01/26 16:04:27 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-char	*ft_strjoin_free(char const *s1, char const *s2)
+void	apply_on_pixarr(t_fdf *fdf, void (f)(t_point *))
 {
-	char		*result;
+	size_t	j;
+	size_t	i;
 
-	if (!(result = ft_strjoin(s1, s2)))
-		return (NULL);
-	free((void *)s1);
-	free((void *)s2);
-	return (result);
+	j = 0;
+	while (j < fdf->pxls.row)
+	{
+		i = 0;
+		while (i < fdf->pxls.col)
+			(f)(fdf->pxls.arr[j][i]);
+		j++;
+	}
+}
+
+void	apply_on_pntarr(t_fdf *fdf , void (f)(t_point *))
+{
+	size_t	j;
+	size_t	i;
+
+	j = 0;
+	while (j < fdf->pnts.row)
+	{
+		i = 0;
+		while (i < fdf->pnts.col)
+			(f)(fdf->pxls.arr[j][i]);
+		j++;
+	}
 }

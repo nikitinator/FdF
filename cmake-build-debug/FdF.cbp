@@ -82,10 +82,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/snikitin/FdF/Makefile">
+		<Unit filename="/Users/snikitin/FdF/CMakeLists.txt">
 			<Option target="FdF"/>
 		</Unit>
-		<Unit filename="/Users/snikitin/FdF/README.md">
+		<Unit filename="/Users/snikitin/FdF/Makefile">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/snikitin/FdF/includes/fdf.h">
@@ -292,6 +292,9 @@
 		<Unit filename="/Users/snikitin/FdF/libft/ft_strtrim.c">
 			<Option target="FdF"/>
 		</Unit>
+		<Unit filename="/Users/snikitin/FdF/libft/ft_swap_int.c">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/snikitin/FdF/libft/ft_tolower.c">
 			<Option target="FdF"/>
 		</Unit>
@@ -334,19 +337,16 @@
 		<Unit filename="/Users/snikitin/FdF/output">
 			<Option target="FdF"/>
 		</Unit>
+		<Unit filename="/Users/snikitin/FdF/srcs/add_color.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/srcs/apply.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/srcs/colorize.c">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/snikitin/FdF/srcs/drw_line_bras.c">
-			<Option target="FdF"/>
-		</Unit>
-		<Unit filename="/Users/snikitin/FdF/srcs/ft_cntwrd.c">
-			<Option target="FdF"/>
-		</Unit>
-		<Unit filename="/Users/snikitin/FdF/srcs/ft_countchr.c">
-			<Option target="FdF"/>
-		</Unit>
-		<Unit filename="/Users/snikitin/FdF/srcs/ft_iswhtsp.c">
-			<Option target="FdF"/>
-		</Unit>
-		<Unit filename="/Users/snikitin/FdF/srcs/ft_strjoin_free.c">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/snikitin/FdF/srcs/get_pixel_arr.c">
@@ -373,7 +373,85 @@
 		<Unit filename="/Users/snikitin/FdF/srcs/scale.c">
 			<Option target="FdF"/>
 		</Unit>
+		<Unit filename="/Users/snikitin/FdF/srcs/sub_color.c">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/snikitin/FdF/srcs/transform.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/1.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/10-2.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/10-70.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/100-6.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/20-60.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/42.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/50-4.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/IGN_Reunion_MNT250_ASC_OCEAN0_XXL.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/basictest.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/elem-col.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/elem-fract.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/elem.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/elem2.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/julia.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/mars.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/pentenegpos.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/plat.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/pnp_flat.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/pylone.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/pyra.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/pyramide.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/t1.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/t2.fdf">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/snikitin/FdF/test_maps/trash">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/snikitin/FdF/CMakeLists.txt">

@@ -6,7 +6,7 @@
 #    By: snikitin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/20 17:45:38 by snikitin          #+#    #+#              #
-#    Updated: 2018/01/24 17:58:03 by snikitin         ###   ########.fr        #
+#    Updated: 2018/01/24 21:15:54 by snikitin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,9 @@ _SRC = main.c \
 	   init_rot_mat.c\
 	   transform.c rotate.c scale.c\
 	   drw_line_bras.c\
-	   mult_matr.c
+	   mult_matr.c\
+	   add_color.c\
+	   sub_color.c
 
 INC = $(_INC:%.h=$(INC_DIR)%.h)
 SRC = $(_SRC:%.c=$(SRC_DIR)%.c)
