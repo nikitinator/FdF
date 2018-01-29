@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/26 16:03:57 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/29 15:14:57 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,12 @@ typedef union	u_color
 	unsigned char	c_8[3];
 }				t_color;
 
+typedef struct	s_func_key_hook
+{
+	int		key;
+	void	(*f)();
+}				t_func_key_hook;
+
 typedef struct	s_drw_ln
 {
 	int		flag;
@@ -133,12 +139,6 @@ typedef struct	s_img
 	int		endian;
 	char	*arr;
 }				t_img;
-
-typedef struct	s_func_key_hook
-{
-	int		key;
-	void	(*f)();
-}				t_func_key_hook;
 
 //t_func_key_hook	func[20] = {
 //	BUT_8,  
@@ -232,8 +232,8 @@ void		sub_red(t_fdf *fdf);
 void		sub_grn(t_fdf *fdf);
 void		sub_blu(t_fdf *fdf);
 
-void		apply_on_pntarr(t_fdf *fdf, void (f)(t_point *));
-void		apply_on_pixarr(t_fdf *fdf, void (f)(t_point *));
+void		apply_on_pntarr(t_fdf *fdf, void (f)(t_fdf *));
+void		apply_on_pixarr(t_fdf *fdf, void (f)(t_fdf *));
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:32:09 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/26 15:34:50 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/01/29 15:15:17 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int 	exit_key(int keycode, void *param)
 	int		i;
 
 	i = 0;
-	t_func_key_hook	func[20] = {
+	static t_func_key_hook	func[21] = {
 		{BUT_8,     mov_x_dec},
 		{BUT_4,     mov_y_dec},
 		{BUT_6,     mov_y_inc},
@@ -72,12 +72,16 @@ int 	exit_key(int keycode, void *param)
 		{BUT_LEFT,  rotate_y_inc}, {BUT_RIGHT, rotate_y_dec},
 		{BUT_UPLF,  rotate_z_inc}, {BUT_DWRI,  rotate_z_dec},
 		{BUT_A, sub_red}, {BUT_S, sub_grn}, {BUT_D, sub_blu},
-		{BUT_Q, add_red}, {BUT_W, add_grn}, {BUT_E, add_blu},
+		{BUT_Q, add_red}, {BUT_W, add_grn}, {BUT_E, add_blu}
 		};
 	while (i < 20)
-	{
-
-		
+	{	
+		if(func[i].key == keycode)
+		{
+			func[i].f(param);
+			break;
+		}
+		i++;
 	}
 
 
@@ -134,8 +138,6 @@ int 	exit_key(int keycode, void *param)
 //		colorize(param);
 //		jjjjjj
 
-
-	
 	get_pixel_arr(&fdf->pnts, &fdf->pxls);
 	print_fdf(fdf->mlx, fdf->win, fdf->img, &fdf->pxls);
 	return(0);
