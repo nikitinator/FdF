@@ -6,41 +6,23 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 20:02:41 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/26 14:26:49 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/07 21:05:01 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-
-void	sub_red_vec(t_point *p)
-{
-	if (p[PXL_CLR] & 0x00110000 != 0x00FF0000)
-		p[PXL_CLR] -= 0x00FF0000;
-}
-
-void	sub_blu_vec(t_point *p)
-{
-	if (p[PXL_CLR] & 0x001100 != 0x0000FF00)
-		p[PXL_CLR] -= 0x00001100;
-}
-
-void	sub_grn_vec(t_point *p)
-{
-	if (p[PXL_CLR] & 0x0000011 != 0x000000FF)
-		p[PXL_CLR] -= 0x00000011;
-}
+#include "fdf.h"
 
 void	sub_red(t_fdf *fdf)
 {
-	apply_on_pntarr(fdf, sub_red_vec);
+	apply_on_pxlarr(fdf, R, -11, change_clr_val);
 }
 
 void	sub_grn(t_fdf *fdf)
 {
-	apply_on_pntarr(fdf, sub_grn_vec);
+	apply_on_pxlarr(fdf, G, -11, change_clr_val);
 }
 
 void	sub_blu(t_fdf *fdf)
 {
-	apply_on_pntarr(fdf, sub_blu_vec);
+	apply_on_pxlarr(fdf, B, -11, change_clr_val);
 }

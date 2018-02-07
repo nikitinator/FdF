@@ -5,61 +5,86 @@
 #                                                     +:+ +:+         +:+      #
 #    By: snikitin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/12/20 17:45:38 by snikitin          #+#    #+#              #
-#    Updated: 2018/01/24 21:15:54 by snikitin         ###   ########.fr        #
+#    Created: 2018/02/07 17:36:11 by snikitin          #+#    #+#              #
+#    Updated: 2018/02/07 21:01:02 by snikitin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fdf
+NAME := fdf         
 
-CC = clang 
+SRC_DIR := ./srcs/
+OBJ_DIR := ./obj/
+INC_DIR := ./includes/
+LIB_DIR := ./lib/
 
-CFLAGS = -Wall -Wextra -Werror
+SRC :=	main.c \
+		scrn_upd.c\
+		get_pixel_arr.c\
+		get_point_arr.c\
+		mov_x.c mov_y.c mov_z.c\
+		rotate_x.c rotate_y.c rotate_z.c\
+		init_rot_mat.c\
+		transform.c rotate.c scale.c\
+		drw_line_bras.c\
+		mult_matr.c\
+		add_color.c\
+		sub_color.c\
+		apply.c\
+		exit_fdf.c\
+		change_clr_val.c\
+		reset_color.c\
+		get_list.c
 
-FRWORKS = -framework Opengl -framework AppKit
+OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
-INC_DIR = ./includes/
-SRC_DIR = ./srcs/
-OBJ_DIR = ./obj/
+INC = $(INC_DIR)fdf.h 
 
-LIB_DIR = ./libft/
-MLX_DIR = ./minilibx_macos/
+LIBFT =			$(LIBFT_DIR)libft.a
+LIBFT_DIR :=    $(LIB_DIR)libft/
+LIBFT_INC :=    $(LIBFT_DIR)/
+LIBFT_FLAGS :=  -lft -L $(LIBFT_DIR)
 
+MLX = $(LIB_DIR)mlx/libmlx.a
+MLX_DIR = $(LIB_DIR)mlx/
+MLX_INC = $(LIB_DIR)mlx/
+MLX_FLAGS = -lmlx -L $(MLX_INC) -framework OpenGl -framework AppKit
 
-_INC = fdf.h
-_SRC = main.c \
-	   print_fdf.c get_pixel_arr.c get_point_arr.c\
-	   init_rot_mat.c\
-	   transform.c rotate.c scale.c\
-	   drw_line_bras.c\
-	   mult_matr.c\
-	   add_color.c\
-	   sub_color.c
+CC_FLAGS := -Wall -Wextra -Werror -O3
+LINK_FLAGS := $(LIBFT_FLAGS) $(MLX_FLAGS)
+HEADER_FLAGS := -I $(LIBFT_INC) -I $(MLX_DIR) -I $(INC_DIR)
 
-INC = $(_INC:%.h=$(INC_DIR)%.h)
-SRC = $(_SRC:%.c=$(SRC_DIR)%.c)
-OBJ = $(addprefix $(OBJ_DIR), $(_SRC:%.c=%.o))
-
-.PHONY: all clean fclean re
+CC := gcc
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	make -C $(LIB_DIR)
+$(NAME): $(LIBFT) $(MLX) $(OBJ) $(INC) 
+	$(CC) $(OBJ) $(LINK_FLAGS) -o $(NAME)
+
+$(OBJ): | $(OBJ_DIR)
+
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC)
+	$(CC) -c $< -o $@ $(CC_FLAGS) $(HEADER_FLAGS)
+
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+
+$(MLX):
 	make -C $(MLX_DIR)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -L $(LIB_DIR) -lft -L $(MLX_DIR) -lmlx\
-		$(FRWORKS)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC) 
-	$(CC) $(CFLAGS) -c $< -o $@
+clean:
+	rm -f $(OBJ)
+	make clean -C $(LIBFT_DIR)
 
-clean: 
-	make -C $(LIB_DIR) clean
-	make -C $(MLX_DIR) clean
-	/bin/rm -rf $(OBJ)
-
-fclean: clean
-	make -C $(LIB_DIR) fclean
-	/bin/rm -rf $(NAME)
+fclean:	clean
+	rm -f $(NAME)
+	rm -rf $(OBJ_DIR)
+	make fclean -C $(LIBFT_DIR)
+	make clean -C $(MLX_DIR)
 
 re: fclean all
+
+vpath %.c $(SRC_DIR)
+.PHONY: all clean fclean re

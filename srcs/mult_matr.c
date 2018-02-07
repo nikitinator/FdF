@@ -6,11 +6,11 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 15:38:49 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/16 19:52:46 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/07 21:04:48 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 void	mult_matr(t_matr3 matrix, t_pntarr *pnts)
 {
@@ -19,11 +19,11 @@ void	mult_matr(t_matr3 matrix, t_pntarr *pnts)
 	double	temp[3];
 
 	j = 0;
-	while(j < pnts->row)
+	while (j < pnts->row)
 	{
 		i = 0;
 		while (i < pnts->col)
-		{	
+		{
 			temp[X] = matrix[0] * pnts->arr[j][i][X] +
 				matrix[1] * pnts->arr[j][i][Y] + matrix[2] * pnts->arr[j][i][Z];
 			temp[Y] = matrix[3] * pnts->arr[j][i][X] +

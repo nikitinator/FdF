@@ -6,11 +6,11 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 19:31:19 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/26 16:37:09 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/07 21:02:49 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 static void	get_upper_lower(t_pntarr *p, int *upper, int *lower)
 {
@@ -33,12 +33,4 @@ static void	get_upper_lower(t_pntarr *p, int *upper, int *lower)
 		}
 		j++;
 	}
-}
-
-void	colorize_fdf(t_fdf *fdf)
-{
-	int		upper;
-	int		lower;
-	
-		
 }

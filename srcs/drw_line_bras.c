@@ -6,11 +6,24 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 19:00:34 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/25 15:52:04 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/07 21:03:30 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
+
+static void	init_color(t_drw_ln *v)
+{
+	if (v->delta_x)
+	{
+		v->m[R] = (v->c2.c_8[R] - v->c1.c_8[R]) / v->delta_x;
+		v->m[G] = (v->c2.c_8[G] - v->c1.c_8[G]) / v->delta_x;
+		v->m[B] = (v->c2.c_8[B] - v->c1.c_8[B]) / v->delta_x;
+	}
+	v->c[R] = v->c1.c_8[R];
+	v->c[G] = v->c1.c_8[G];
+	v->c[B] = v->c1.c_8[B];
+}
 
 static void	init_data(t_drw_ln *v, t_pixel pixel1, t_pixel pixel2)
 {
@@ -30,15 +43,7 @@ static void	init_data(t_drw_ln *v, t_pixel pixel1, t_pixel pixel2)
 	v->error = 2 * v->delta_y - v->delta_x;
 	v->c1.c_32 = pixel1[PXL_CLR];
 	v->c2.c_32 = pixel2[PXL_CLR];
-	if (v->delta_x)
-	{
-		v->m[R] = (v->c2.c_8[R] - v->c1.c_8[R]) / v->delta_x;
-		v->m[G] = (v->c2.c_8[G] - v->c1.c_8[G]) / v->delta_x;
-		v->m[B] = (v->c2.c_8[B] - v->c1.c_8[B]) / v->delta_x;
-	}
-	v->c[R] = v->c1.c_8[R];
-	v->c[G] = v->c1.c_8[G];
-	v->c[B] = v->c1.c_8[B];
+	init_color(v);
 }
 
 static void	change_color(t_drw_ln *v)

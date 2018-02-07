@@ -1,2 +1,0 @@
-# FdF
-first graphic project

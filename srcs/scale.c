@@ -5,81 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/09 16:21:29 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/26 16:26:23 by snikitin         ###   ########.fr       */
+/*   Created: 2018/02/06 12:43:41 by snikitin          #+#    #+#             */
+/*   Updated: 2018/02/07 21:04:29 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
-void	scale_pnts(void	*param, double x, double y, double z)
-{	
-	t_fdf 	*fdf;
-	size_t	j;
-	size_t	i;
+static void	scale_incr_vec(t_point *p, double n)
+{
+	(*p)[X] = (*p)[X] * n;
+	(*p)[Y] = (*p)[Y] * n;
+	(*p)[Z] = (*p)[Z] * n;
+}
+
+static void	scale_decr_vec(t_point *p, double n)
+{
+	(*p)[X] = (*p)[X] / n;
+	(*p)[Y] = (*p)[Y] / n;
+	(*p)[Z] = (*p)[Z] / n;
+}
+
+void		scale_incr(t_fdf *fdf)
+{
+	t_point	temp;
+
+	ft_memcpy(temp, fdf->pnts.center, sizeof(t_point));
+	transform_pnts(fdf, -fdf->pnts.center[X], -fdf->pnts.center[Y],
+			-fdf->pnts.center[Z]);
+	apply_on_pntarr(fdf, fdf->scl_coeff, scale_incr_vec);
+	transform_pnts(fdf, temp[X], temp[Y], temp[Z]);
+}
+
+void		scale_decr(t_fdf *fdf)
+{
 	t_point temp;
 
-	fdf = (t_fdf *)param;
-	ft_putendl("scale_pnts");
-
-	temp[X]= fdf->pnts.center[X];
-	temp[Y] = fdf->pnts.center[Y];
-	temp[Z] = fdf->pnts.center[Z];
-	transform_pnts(param, -fdf->pnts.center[X], -fdf->pnts.center[Y],
-		   	-fdf->pnts.center[Z]);
-	j = 0;
-	while (j < fdf->pnts.row)
-	{
-		i = 0;
-		while (i < fdf->pnts.col)
-		{
-			fdf->pnts.arr[j][i][X] *= x;
-			fdf->pnts.arr[j][i][Y] *= y;
-			fdf->pnts.arr[j][i][Z] *= z;
-			i++;
-		}
-		j++;
-	}
-	transform_pnts(param, temp[X], temp[Y], temp[Z]);
-}
-
-void	scale_inc_vec(t_fdf *fdf)
-{
-	fdf->pnts.arr[j][i][X] *= x;
-	fdf->pnts.arr[j][i][Y] *= y;
-	fdf->pnts.arr[j][i][Z] *= z;
-}
-			
-void	scale_inc(t_fdf *fdf)
-{
-	double	temp[3];
-
-	temp[X] = fdf->pnts.center[X];
-	temp[Y] = fdf->pnts.center[Y];
-	temp[Z] = fdf->pnts.center[Z];
-	transform_pnts(param, -fdf->pnts.center[X], -fdf->pnts.center[Y],
-		   	-fdf->pnts.center[Z]);
-	apply_on_pntarr(fdf, scale_inc_vec);
-	transform_pnts(param, temp[X], temp[Y], temp[Z]);
-}
-
-void	scale_dec_vec(t_fdf *fdf)
-{
-
-	fdf->pnts.arr[j][i][X] /= x;
-	fdf->pnts.arr[j][i][Y] /= y;
-	fdf->pnts.arr[j][i][Z] /= z;
-}
-
-void	scale_dec(void *param)
-{
-	double	temp[3];
-
-	temp[X] = fdf->pnts.center[X];
-	temp[Y] = fdf->pnts.center[Y];
-	temp[Z] = fdf->pnts.center[Z];
-	transform_pnts(param, -fdf->pnts.center[X], -fdf->pnts.center[Y],
-		   	-fdf->pnts.center[Z]);
-	apply_on_pntarr(fdf, scale_dec_vec);
-	transform_pnts(param, temp[X], temp[Y], temp[Z]);
+	ft_memcpy(temp, fdf->pnts.center, sizeof(t_point));
+	transform_pnts(fdf, -fdf->pnts.center[X], -fdf->pnts.center[Y],
+			-fdf->pnts.center[Z]);
+	apply_on_pntarr(fdf, fdf->scl_coeff, scale_decr_vec);
+	transform_pnts(fdf, temp[X], temp[Y], temp[Z]);
 }

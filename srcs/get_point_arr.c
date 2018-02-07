@@ -6,86 +6,79 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 15:03:25 by snikitin          #+#    #+#             */
-/*   Updated: 2018/01/21 18:44:34 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/07 21:03:47 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
-static t_list	*get_list(int fd)
+static void	set_point_xyz(t_point *p, int x, int y, int z)
 {
-	t_list *begin_list;
-	char	*line;
-
-	begin_list = NULL;
-	while(get_next_line(fd, &line) > 0)	
-	{
-		if (*line)
-		{
-			char **split;
-			ft_putendl(line);
-			split = ft_strsplit(line,' ');
-			ft_list_push_back(&begin_list, &split, sizeof(char ***));
-		}
-		free(line);
-	}
-	return (begin_list);
+	(*p)[X] = x * XY_COORD_MUL;
+	(*p)[Y] = y * XY_COORD_MUL;
+	(*p)[Z] = z;
 }
 
-static void		set_arr(t_pntarr *parr, t_list *begin_list)
+static void	set_point_clr(t_point *p, char *token)
+{
+	char *color;
+
+	if (((color = ft_strchr(token, ','))) && ft_strnequ(",0x", color, 3))
+		(*p)[PNT_CLR] = (float)ft_atoi_base(color + 3, 16);
+	else
+		(*p)[PNT_CLR] = (float)WHITE;
+}
+
+static void	set_arr(t_pntarr *parr, t_list *begin_list)
 {
 	size_t	i;
 	size_t	j;
 	char	**tokens;
-	char 	*color;
-	
-	tokens = *(char ***)begin_list->content;
+
 	j = 0;
-	while (tokens[parr->col])
-		parr->col++;
-	parr->arr = malloc(parr->row * sizeof(t_point *));
-	while(begin_list)
+	if (!(parr->arr = malloc(parr->row * sizeof(t_point *))))
+		return ;
+	while (begin_list)
 	{
 		tokens = *(char ***)begin_list->content;
-		parr->arr[j] = malloc(parr->col * sizeof(t_point));
+		if (!(parr->arr[j] = malloc(parr->col * sizeof(t_point))))
+			return ;
 		i = 0;
-		while(tokens[i])
+		while (tokens[i])
 		{
-            printf("%s\t%d\n",tokens[i] ,ft_atoi(tokens[i]));
-
-			parr->arr[j][i][X] = i * 10 ;
-			parr->arr[j][i][Y] = j * 10 ;
-			parr->arr[j][i][ISTOP] = 
-				((parr->arr[j][i][Z] = (-ft_atoi(tokens[i])))) ? 1 : 0;
-			if ((color = ft_strchr(tokens[i], ',')))
-				parr->arr[j][i][PNT_CLR] = (float)ft_atoi_base(color + 3, 16);
-			else
-				parr->arr[j][i][PNT_CLR] = (float)WHITE;
-			ft_strclr(tokens[i]);
+			set_point_xyz(&parr->arr[j][i], i, j, -ft_atoi(tokens[i]));
+			set_point_clr(&parr->arr[j][i], tokens[i]);
 			free(tokens[i]);
 			i++;
 		}
 		free(tokens);
-		free(begin_list);
 		begin_list = begin_list->next;
 		j++;
 	}
 }
 
-void	get_point_arr(int fd, t_pntarr *parr)
+static void	del(void *content, size_t content_size)
+{
+	ft_bzero(content, content_size);
+	free(content);
+}
+
+void		get_point_arr(int fd, t_pntarr *parr)
 {
 	t_list *begin_list;
 	t_list *temp;
-	parr->z_list = 0;
-	begin_list = get_list(fd);
-	temp = begin_list;
-	parr->row = ft_list_count(begin_list);
-	parr->col = 0;
-	set_arr(parr, begin_list);
-	parr->center[X] = (parr->col-1) * 10/2.0;
-	parr->center[Y] = (parr->row-1) * 10/2.0;
-	parr->center[Z] = 0;
 
-	printf("row: %zu \t col %zu\n", parr->row, parr->col);
+	if (!(begin_list = get_list(fd, &parr->col, &parr->row)))
+	{
+		ft_putendl_fd("Invalid input file", 2);
+		exit(1);
+	}
+	printf("col :%zu, row :%zu\n", parr->col, parr->row);
+	temp = begin_list;
+	set_arr(parr, begin_list);
+	ft_lstdel(&temp, del);
+	parr->center[X] = (parr->col - 1) * XY_COORD_MUL / 2.0;
+	parr->center[Y] = (parr->row - 1) * XY_COORD_MUL / 2.0;
+	parr->center[Z] = 0;
 	return ;
 }
