@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/06 11:30:10 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/07 21:02:58 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/07 21:47:20 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ void	exit_fdf(t_fdf *fdf)
 		free(fdf->pxls.arr);
 	mlx_destroy_image(fdf->mlx, fdf->img.pnt_img);
 	mlx_destroy_window(fdf->mlx, fdf->win);
+	while (1)
+		;
 	exit(1);
 }

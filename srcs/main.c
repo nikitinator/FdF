@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:32:09 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/07 20:59:17 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/07 21:45:13 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ int		main(int argc, char **argv)
 		mlx_hook(fdf.win, 17, 5, (int (*)(void *))exit_fdf, &fdf);
 		mlx_loop(fdf.mlx);
 	}
-	ft_putendl_fd("usage: fdf source file", 2);
+	ft_putendl_fd("Usage : ./fdf <filename>", 2);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/07 20:58:20 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/07 21:46:24 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 # include "mlx.h"
 # include "libft.h"
 
-# define MOV_COEFF 5
-# define SCL_COEFF 5
 # define XY_COORD_MUL 10
 
 # define X 0
@@ -71,37 +69,29 @@
 # define BUT_PLU 69
 # define BUT_MUL 75
 # define BUT_DIV 67
-# define BUT_SPACE 49
 # define BUT_UP 126
 # define BUT_DOWN 125
 # define BUT_LEFT 123
 # define BUT_RIGHT 124
 # define BUT_UPLF 115
 # define BUT_DWRI 119
-# define BUT_C 8
-# define BUT_BIGG 47
-# define BUT_LESS 43
 # define BUT_A 0
 # define BUT_S 1
 # define BUT_D 2
 # define BUT_Q 12
 # define BUT_W 13
 # define BUT_E 14
-# define BUT_C 8
 # define BUT_ESC 53
 # define BUT_R 15
 # define BUT_F1 122
 
 # define WHITE 0x00FFFFFF
-# define GREEN 0x0000FF00
-# define RED 0x00FF0000
 
 # define CHK_PIX(x, y) if((0 <= x && x< IMG_WIDTH) && (0 <= y && y<IMG_HEIGHT))
 # define PUT_PIX(x, y, i, c) *(int *)(i->arr+(x*i->by_pp+i->size_line*y)) = c
 # define SET_PIX(x, y, i, c) CHK_PIX(x, y)PUT_PIX(x, y, i, c)
 
 typedef double		t_point[4];
-typedef float		t_vec[3];
 typedef int			t_pixel[3];
 typedef float		t_matr3[9];
 
@@ -170,7 +160,6 @@ typedef struct		s_fdf
 	t_matr3			rot_z;
 	t_matr3			scl;
 	int				show_help;
-	void			(*f[100])(void *param);
 }					t_fdf;
 
 typedef struct		s_func_key_hook
@@ -183,8 +172,6 @@ int					init_rot_mat(t_fdf *fdf);
 void				set_rot_mat_x(t_fdf *fdf, double rot_coeff);
 void				set_rot_mat_y(t_fdf *fdf, double rot_coeff);
 void				set_rot_mat_z(t_fdf *fdf, double rot_coeff);
-void				mult_matr(t_matr3 matrix, t_pntarr *pnts);
-void				normalize_pnts(t_pntarr *pnts);
 void				mult_matr(t_matr3 matrix, t_pntarr *pnts);
 void				transform_pnts(t_fdf *fdf, double x, double y, double z);
 void				scale_pnts(void *param, double x, double y, double z);
