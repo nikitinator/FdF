@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:32:09 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/07 21:45:13 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/09 11:18:01 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	init_fdf_img(t_img *img, void *mlx_ptr)
 void	init_fdf(t_fdf *fdf)
 {
 	init_fdf_img(&fdf->img, fdf->mlx);
-	get_point_arr(fdf->fd, &(fdf->pnts));
+	get_point_arr(fdf->fd, &(fdf->pnts), fdf);
 	transform_pnts(fdf, -fdf->pnts.center[X], -fdf->pnts.center[Y], 0);
 	transform_pnts(fdf, IMG_WIDTH / 2.0, IMG_HEIGHT / 2.0, 0);
 	init_pixel_arr(fdf);

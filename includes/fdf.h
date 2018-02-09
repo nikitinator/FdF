@@ -6,14 +6,13 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/07 21:46:24 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/09 11:25:13 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
@@ -109,8 +108,6 @@ typedef struct		s_drw_ln
 	int				sign_x;
 	int				sign_y;
 	int				error;
-	int				error_2;
-	double			pix_num;
 	int				t[2];
 	float			c[3];
 	float			m[3];
@@ -130,7 +127,6 @@ typedef struct		s_pixarr
 {
 	size_t			col;
 	size_t			row;
-	int				pr_type;
 	t_pixel			**arr;
 }					t_pixarr;
 
@@ -177,7 +173,7 @@ void				transform_pnts(t_fdf *fdf, double x, double y, double z);
 void				scale_pnts(void *param, double x, double y, double z);
 
 t_list				*get_list(int fd, size_t *column_num, size_t *row_num);
-void				get_point_arr(int fd, t_pntarr *parr);
+void				get_point_arr(int fd, t_pntarr *parr, t_fdf *fdf);
 void				init_pixel_arr(t_fdf *fdf);
 void				get_pixel_arr(t_pntarr *parr, t_pixarr *pixarr);
 void				drw_line_bras(t_img *img, t_pixel pixel1, t_pixel pixel2);
