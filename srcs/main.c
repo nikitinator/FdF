@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:32:09 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/09 11:18:01 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/28 15:47:37 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 void	toggle_show_help(t_fdf *fdf)
 {
-	if (fdf->show_help)
-		fdf->show_help = 0;
-	else
-		fdf->show_help = 1;
+	fdf->show_help = !fdf->show_help;
 }
 
 int		handle_key(int keycode, t_fdf *fdf)
 {
 	int						i;
-	static t_func_key_hook	func[23] = {
+	static t_func_key_hook	func[NUM_OF_KEYS] = {
 		{BUT_8, mov_decr_y}, {BUT_4, mov_decr_x},
 		{BUT_6, mov_incr_x}, {BUT_2, mov_incr_y},
 		{BUT_MIN, mov_decr_z}, {BUT_PLU, mov_incr_z},
@@ -38,9 +35,9 @@ int		handle_key(int keycode, t_fdf *fdf)
 		};
 
 	i = 0;
-	while (i < 23 && func[i].key != keycode)
+	while (i < NUM_OF_KEYS && func[i].key != keycode)
 		i++;
-	if (i < 23)
+	if (i < NUM_OF_KEYS)
 		func[i].f(fdf);
 	get_pixel_arr(&fdf->pnts, &fdf->pxls);
 	scrn_upd(fdf);
