@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 13:32:09 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/28 15:47:37 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/28 18:40:04 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	init_fdf_img(t_img *img, void *mlx_ptr)
 void	init_fdf(t_fdf *fdf)
 {
 	init_fdf_img(&fdf->img, fdf->mlx);
-	get_point_arr(fdf->fd, &(fdf->pnts), fdf);
+	get_point_arr(&(fdf->pnts), fdf, fdf->tokens);
 	transform_pnts(fdf, -fdf->pnts.center[X], -fdf->pnts.center[Y], 0);
 	transform_pnts(fdf, IMG_WIDTH / 2.0, IMG_HEIGHT / 2.0, 0);
 	init_pixel_arr(fdf);
@@ -65,6 +65,9 @@ void	init_fdf(t_fdf *fdf)
 	fdf->scl_coeff = 1.5;
 	init_rot_mat(fdf);
 	fdf->show_help = 0;
+	if (!(fdf->win = mlx_new_window(fdf->mlx,
+					IMG_WIDTH, IMG_HEIGHT, "FdF by snikitin")))
+		exit_fdf(fdf);
 }
 
 int		main(int argc, char **argv)
@@ -75,10 +78,9 @@ int		main(int argc, char **argv)
 	{
 		if ((fdf.fd = open(argv[1], O_RDONLY)) <= 0)
 			return (-1);
-		if (!(fdf.mlx = mlx_init()))
+		if (!(fdf.tokens = get_list(fdf.fd, &fdf.pnts.col, &fdf.pnts.row)))
 			return (-1);
-		if (!(fdf.win = mlx_new_window(fdf.mlx,
-						IMG_WIDTH, IMG_HEIGHT, "mlx 42")))
+		if (!(fdf.mlx = mlx_init()))
 			return (-1);
 		init_fdf(&fdf);
 		scrn_upd(&fdf);

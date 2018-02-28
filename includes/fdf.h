@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/28 15:48:56 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/28 18:46:09 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ typedef struct		s_fdf
 	int				fd;
 	void			*mlx;
 	void			*win;
+	t_list			*tokens;
 	t_img			img;
 	t_pntarr		pnts;
 	t_pixarr		pxls;
@@ -175,7 +176,10 @@ void				transform_pnts(t_fdf *fdf, double x, double y, double z);
 void				scale_pnts(void *param, double x, double y, double z);
 
 t_list				*get_list(int fd, size_t *column_num, size_t *row_num);
-void				get_point_arr(int fd, t_pntarr *parr, t_fdf *fdf);
+void				list_free(t_list *list);
+void				del_content(void *content, size_t content_size);
+void				get_point_arr(t_pntarr *parr, t_fdf *fdf,
+		t_list *tokens);
 void				init_pixel_arr(t_fdf *fdf);
 void				get_pixel_arr(t_pntarr *parr, t_pixarr *pixarr);
 void				drw_line_bras(t_img *img, t_pixel pixel1, t_pixel pixel2);

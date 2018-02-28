@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 15:03:25 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/09 11:21:57 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/02/28 18:44:25 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,29 +58,19 @@ static int		set_arr(t_pntarr *parr, t_list *begin_list)
 	return (0);
 }
 
-static void		del(void *content, size_t content_size)
+void			get_point_arr(t_pntarr *parr, t_fdf *fdf,
+		t_list *begin_list)
 {
-	ft_bzero(content, content_size);
-	free(content);
-}
-
-void			get_point_arr(int fd, t_pntarr *parr, t_fdf *fdf)
-{
-	t_list *begin_list;
 	t_list *temp;
 
-	if (!(begin_list = get_list(fd, &parr->col, &parr->row)))
-	{
-		ft_putendl_fd("Invalid input file", 2);
-		exit_fdf(fdf);
-	}
 	temp = begin_list;
 	if ((set_arr(parr, begin_list)))
 	{
-		ft_lstdel(&temp, del);
+		list_free(temp);
+		ft_lstdel(&temp, del_content);
 		exit_fdf(fdf);
 	}
-	ft_lstdel(&temp, del);
+	ft_lstdel(&temp, del_content);
 	parr->center[X] = (parr->col - 1) * XY_COORD_MUL / 2.0;
 	parr->center[Y] = (parr->row - 1) * XY_COORD_MUL / 2.0;
 	parr->center[Z] = 0;
