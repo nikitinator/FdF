@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/11 13:14:03 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/28 18:46:09 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/03/06 18:04:03 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,9 @@ void				mult_matr(t_matr3 matrix, t_pntarr *pnts);
 void				transform_pnts(t_fdf *fdf, double x, double y, double z);
 void				scale_pnts(void *param, double x, double y, double z);
 
+void				*del_return(t_list *list);
 t_list				*get_list(int fd, size_t *column_num, size_t *row_num);
+t_list				*validate_list(t_list *list);
 void				list_free(t_list *list);
 void				del_content(void *content, size_t content_size);
 void				get_point_arr(t_pntarr *parr, t_fdf *fdf,

@@ -6,7 +6,7 @@
 /*   By: snikitin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/07 15:49:41 by snikitin          #+#    #+#             */
-/*   Updated: 2018/02/28 19:37:53 by snikitin         ###   ########.fr       */
+/*   Updated: 2018/03/06 17:59:06 by snikitin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void		list_free(t_list *list)
 		ft_lstdel(&list_copy, del_content);
 }
 
-static void	*del_return(t_list *list)
+void		*del_return(t_list *list)
 {
 	ft_putendl_fd("Invalid argument", 2);
 	list_free(list);
